@@ -1,7 +1,7 @@
 <x-layouts.app>
     @php
         $seoTitle = 'Our Portfolio';
-        $seoDescription = 'Explore SomaTech\'s portfolio of web and mobile applications. See our best work and the results we\'ve achieved for our clients.';
+        $seoDescription = 'Explore Somaticx\'s portfolio of web and mobile applications. See our best work and the results we\'ve achieved for our clients.';
     @endphp
 
     {{-- Breadcrumb --}}

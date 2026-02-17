@@ -1,7 +1,7 @@
 <x-layouts.app>
     @php
         $seoTitle = 'Our Services';
-        $seoDescription = 'Explore SomaTech\'s professional web development, app development, and website maintenance services designed to help your business succeed.';
+        $seoDescription = 'Explore Somaticx\'s professional web development, app development, and website maintenance services designed to help your business succeed.';
     @endphp
 
     {{-- Breadcrumb --}}

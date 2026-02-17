@@ -111,8 +111,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@somatech.com'),
-        'name' => env('MAIL_FROM_NAME', 'SomaTech'),
+        'address' => env('MAIL_FROM_ADDRESS', 'hello@somaticx.com'),
+        'name' => env('MAIL_FROM_NAME', 'Somaticx'),
     ],
 
     /*
@@ -124,6 +124,6 @@ return [
     |
     */
 
-    'admin_email' => env('MAIL_ADMIN_EMAIL', 'admin@somatech.com'),
+    'admin_email' => env('MAIL_ADMIN_EMAIL', 'admin@somaticx.com'),
 
 ];

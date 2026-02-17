@@ -18,15 +18,15 @@
     <div class="container">
         <div class="flex items-center justify-between h-20">
             {{-- Logo - SRS UI-002 --}}
-            <a href="{{ route('home') }}" class="flex items-center space-x-2 group">
-                <div class="w-10 h-10 bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent-2)] rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+            <a href="{{ route('home') }}" class="flex items-center gap-2 group">
+                <div class="w-10 h-10 bg-linear-to-br from-accent to-accent-2 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
                     <span class="text-white font-bold text-xl">S</span>
                 </div>
-                <span class="text-xl font-bold font-display">SomaTech</span>
+                <span class="text-xl font-bold font-display">Somaticx</span>
             </a>
 
             {{-- Desktop Navigation - SRS UI-002 --}}
-            <div class="hidden lg:flex items-center space-x-8">
+            <div class="hidden lg:flex items-center gap-8">
                 <x-nav-link :href="route('home')" :active="request()->routeIs('home')">Home</x-nav-link>
                 <x-nav-link :href="route('about')" :active="request()->routeIs('about')">About</x-nav-link>
                 <x-nav-link :href="route('services.index')" :active="request()->routeIs('services.*')">Services</x-nav-link>
@@ -36,7 +36,7 @@
                 {{-- Hire Us CTA - SRS UI-002 --}}
                 <a
                     href="{{ route('contact.index') }}"
-                    class="px-6 py-2 bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-2)] rounded-full text-white font-medium hover:scale-105 transition-transform"
+                    class="ml-4 px-6 py-2.5 bg-linear-to-r from-accent to-accent-2 rounded-full text-white font-semibold hover:scale-105 hover:shadow-lg hover:shadow-accent/30 transition-all duration-300"
                 >
                     Hire Us
                 </a>
@@ -68,7 +68,7 @@
         x-transition:leave="transition ease-in duration-200"
         x-transition:leave-start="opacity-100"
         x-transition:leave-end="opacity-0"
-        class="lg:hidden fixed inset-0 top-20 bg-[var(--color-bg-primary)] z-40"
+        class="lg:hidden fixed inset-0 top-20 bg-bg-primary z-40"
         id="mobile-menu"
     >
         <div class="flex flex-col space-y-4 p-6">
@@ -80,7 +80,7 @@
 
             <a
                 href="{{ route('contact.index') }}"
-                class="mt-4 px-6 py-3 bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-2)] rounded-full text-white font-medium text-center"
+                class="mt-4 px-6 py-3 bg-linear-to-r from-accent to-accent-2 rounded-full text-white font-medium text-center"
             >
                 Hire Us
             </a>

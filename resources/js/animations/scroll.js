@@ -14,13 +14,13 @@ gsap.registerPlugin(ScrollTrigger);
 export function initScrollAnimations() {
     // Parallax backgrounds
     initParallax();
-    
+
     // Section reveals
     initSectionReveals();
-    
+
     // Progress indicators
     initProgressIndicator();
-    
+
     // Horizontal scroll sections (if any)
     initHorizontalScroll();
 }
@@ -31,7 +31,7 @@ export function initScrollAnimations() {
 function initParallax() {
     gsap.utils.toArray('[data-parallax]').forEach((element) => {
         const speed = parseFloat(element.dataset.parallax) || 0.5;
-        
+
         gsap.to(element, {
             scrollTrigger: {
                 trigger: element,
@@ -52,7 +52,7 @@ function initSectionReveals() {
     // Stagger grid items
     gsap.utils.toArray('.grid[data-stagger]').forEach((grid) => {
         const items = grid.children;
-        
+
         gsap.from(items, {
             scrollTrigger: {
                 trigger: grid,
@@ -69,12 +69,12 @@ function initSectionReveals() {
             ease: 'power3.out',
         });
     });
-    
+
     // Counter animations
     gsap.utils.toArray('[data-counter]').forEach((counter) => {
         const target = parseInt(counter.dataset.counter, 10);
         const suffix = counter.dataset.suffix || '';
-        
+
         ScrollTrigger.create({
             trigger: counter,
             start: 'top 80%',
@@ -91,12 +91,12 @@ function initSectionReveals() {
             },
         });
     });
-    
+
     // Text reveals with split text effect
     gsap.utils.toArray('[data-text-reveal]').forEach((element) => {
         const text = element.textContent;
         element.innerHTML = '';
-        
+
         // Create wrapper for each word
         text.split(' ').forEach((word, i) => {
             const wordSpan = document.createElement('span');
@@ -104,9 +104,9 @@ function initSectionReveals() {
             wordSpan.innerHTML = `<span class="inline-block">${word}&nbsp;</span>`;
             element.appendChild(wordSpan);
         });
-        
+
         const innerSpans = element.querySelectorAll('span span');
-        
+
         gsap.from(innerSpans, {
             scrollTrigger: {
                 trigger: element,
@@ -128,7 +128,7 @@ function initSectionReveals() {
 function initProgressIndicator() {
     const progressBar = document.querySelector('.scroll-progress');
     if (!progressBar) return;
-    
+
     gsap.to(progressBar, {
         scrollTrigger: {
             trigger: document.body,
@@ -148,7 +148,7 @@ function initHorizontalScroll() {
     gsap.utils.toArray('[data-horizontal-scroll]').forEach((container) => {
         const sections = container.children;
         const totalWidth = Array.from(sections).reduce((acc, section) => acc + section.offsetWidth, 0);
-        
+
         gsap.to(sections, {
             scrollTrigger: {
                 trigger: container,
@@ -172,7 +172,7 @@ export function initMagneticButtons() {
             const rect = button.getBoundingClientRect();
             const x = e.clientX - rect.left - rect.width / 2;
             const y = e.clientY - rect.top - rect.height / 2;
-            
+
             gsap.to(button, {
                 x: x * 0.3,
                 y: y * 0.3,
@@ -180,7 +180,7 @@ export function initMagneticButtons() {
                 ease: 'power2.out',
             });
         });
-        
+
         button.addEventListener('mouseleave', () => {
             gsap.to(button, {
                 x: 0,
@@ -198,18 +198,18 @@ export function initMagneticButtons() {
 export function initTiltEffect() {
     document.querySelectorAll('[data-tilt]').forEach((card) => {
         const intensity = parseFloat(card.dataset.tilt) || 10;
-        
+
         card.addEventListener('mousemove', (e) => {
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
-            
+
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
-            
+
             const rotateX = ((y - centerY) / centerY) * -intensity;
             const rotateY = ((x - centerX) / centerX) * intensity;
-            
+
             gsap.to(card, {
                 rotationX: rotateX,
                 rotationY: rotateY,
@@ -218,7 +218,7 @@ export function initTiltEffect() {
                 transformPerspective: 1000,
             });
         });
-        
+
         card.addEventListener('mouseleave', () => {
             gsap.to(card, {
                 rotationX: 0,

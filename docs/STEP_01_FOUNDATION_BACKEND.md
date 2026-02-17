@@ -1,5 +1,5 @@
 # STEP 1: Foundation & Backend Architecture
-## SomaTech Portfolio Website Implementation
+## Somaticx Portfolio Website Implementation
 
 > **SRS Reference:** Sections 3, 4, 7.2, 8.1 | **Priority:** Critical | **Duration:** 1 week
 > 
@@ -1163,7 +1163,7 @@ class SeoService
     {
         $defaults = [
             'title' => config('app.name') . ' - Premium Web & App Development',
-            'description' => 'SomaTech specializes in Website Development, App Development, and Website Maintenance. Transforming ideas into digital excellence.',
+            'description' => 'Somaticx specializes in Website Development, App Development, and Website Maintenance. Transforming ideas into digital excellence.',
             'image' => URL::to('/images/og-default.jpg'),
             'url' => URL::current(),
             'type' => 'website',
@@ -1213,17 +1213,17 @@ class SeoService
         return [
             '@context' => 'https://schema.org',
             '@type' => 'Organization',
-            'name' => 'SomaTech',
+            'name' => 'Somaticx',
             'url' => URL::to('/'),
             'logo' => URL::to('/images/logo.png'),
             'contactPoint' => [
                 '@type' => 'ContactPoint',
-                'telephone' => '+1-555-SOMATECH',
+                'telephone' => '+1-555-SOMATICX',
                 'contactType' => 'Customer Service',
             ],
             'sameAs' => [
-                'https://github.com/somatech',
-                'https://linkedin.com/company/somatech',
+                'https://github.com/somaticx',
+                'https://linkedin.com/company/somaticx',
             ],
         ];
     }
@@ -1233,7 +1233,7 @@ class SeoService
         return [
             '@context' => 'https://schema.org',
             '@type' => 'WebSite',
-            'name' => 'SomaTech',
+            'name' => 'Somaticx',
             'url' => URL::to('/'),
             'potentialAction' => [
                 '@type' => 'SearchAction',
@@ -1252,7 +1252,7 @@ class SeoService
             'description' => $data['description'] ?? '',
             'provider' => [
                 '@type' => 'Organization',
-                'name' => 'SomaTech',
+                'name' => 'Somaticx',
             ],
         ];
     }
@@ -1267,7 +1267,7 @@ class SeoService
             'image' => $data['image'] ?? '',
             'author' => [
                 '@type' => 'Organization',
-                'name' => 'SomaTech',
+                'name' => 'Somaticx',
             ],
         ];
     }
@@ -1438,7 +1438,7 @@ class ContactConfirmationMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Thank you for contacting SomaTech',
+            subject: 'Thank you for contacting Somaticx',
         );
     }
 
@@ -1500,7 +1500,7 @@ return Application::configure(basePath: dirname(__DIR__))
 ### Update .env.example — ✅ Implemented
 
 ```env
-APP_NAME=SomaTech
+APP_NAME=Somaticx
 APP_ENV=local
 APP_KEY=
 APP_DEBUG=true
@@ -1510,14 +1510,14 @@ APP_URL=http://localhost
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=somatech
+DB_DATABASE=somaticx
 DB_USERNAME=root
 DB_PASSWORD=
 
 MAIL_MAILER=log
-MAIL_FROM_ADDRESS="hello@somatech.com"
+MAIL_FROM_ADDRESS="hello@somaticx.com"
 MAIL_FROM_NAME="${APP_NAME}"
-MAIL_ADMIN_EMAIL="admin@somatech.com"
+MAIL_ADMIN_EMAIL="admin@somaticx.com"
 
 QUEUE_CONNECTION=database
 ```

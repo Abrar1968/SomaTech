@@ -5,7 +5,7 @@
             <div class="w-10 h-10 bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent-2)] rounded-lg flex items-center justify-center">
                 <span class="text-white font-bold text-xl">S</span>
             </div>
-            <span class="text-xl font-bold font-display">SomaTech</span>
+            <span class="text-xl font-bold font-display">Somaticx</span>
         </a>
     </div>
 

@@ -19,7 +19,7 @@ class SeoService
     {
         $defaults = [
             'title' => config('app.name').' - Premium Web & App Development',
-            'description' => 'SomaTech specializes in Website Development, App Development, and Website Maintenance. Transforming ideas into digital excellence.',
+            'description' => 'Somaticx specializes in Website Development, App Development, and Website Maintenance. Transforming ideas into digital excellence.',
             'image' => URL::to('/images/og-default.jpg'),
             'url' => URL::current(),
             'type' => 'website',
@@ -75,17 +75,17 @@ class SeoService
         return [
             '@context' => 'https://schema.org',
             '@type' => 'Organization',
-            'name' => 'SomaTech',
+            'name' => 'Somaticx',
             'url' => URL::to('/'),
             'logo' => URL::to('/images/logo.png'),
             'contactPoint' => [
                 '@type' => 'ContactPoint',
-                'telephone' => '+1-555-SOMATECH',
+                'telephone' => '+1-555-SOMATICX',
                 'contactType' => 'Customer Service',
             ],
             'sameAs' => [
-                'https://github.com/somatech',
-                'https://linkedin.com/company/somatech',
+                'https://github.com/somaticx',
+                'https://linkedin.com/company/somaticx',
             ],
         ];
     }
@@ -100,7 +100,7 @@ class SeoService
         return [
             '@context' => 'https://schema.org',
             '@type' => 'WebSite',
-            'name' => 'SomaTech',
+            'name' => 'Somaticx',
             'url' => URL::to('/'),
             'potentialAction' => [
                 '@type' => 'SearchAction',
@@ -124,7 +124,7 @@ class SeoService
             'description' => $data['description'] ?? '',
             'provider' => [
                 '@type' => 'Organization',
-                'name' => 'SomaTech',
+                'name' => 'Somaticx',
             ],
         ];
     }
@@ -144,7 +144,7 @@ class SeoService
             'image' => $data['image'] ?? '',
             'author' => [
                 '@type' => 'Organization',
-                'name' => 'SomaTech',
+                'name' => 'Somaticx',
             ],
         ];
     }

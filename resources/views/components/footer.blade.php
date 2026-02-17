@@ -7,7 +7,7 @@
                     <div class="w-10 h-10 bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent-2)] rounded-lg flex items-center justify-center">
                         <span class="text-white font-bold text-xl">S</span>
                     </div>
-                    <span class="text-xl font-bold font-display">SomaTech</span>
+                    <span class="text-xl font-bold font-display">Somaticx</span>
                 </div>
                 <p class="text-[var(--color-text-muted)] text-sm mb-6">
                     Transforming ideas into digital excellence through innovative web and app development.
@@ -64,13 +64,13 @@
                         <svg class="w-5 h-5 text-[var(--color-accent)] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                         </svg>
-                        <a href="mailto:hello@somatech.com" class="text-[var(--color-text-muted)] hover:text-white transition-colors">hello@somatech.com</a>
+                        <a href="mailto:hello@somaticx.com" class="text-[var(--color-text-muted)] hover:text-white transition-colors">hello@somaticx.com</a>
                     </li>
                     <li class="flex items-start gap-3">
                         <svg class="w-5 h-5 text-[var(--color-accent)] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
                         </svg>
-                        <span class="text-[var(--color-text-muted)]">+1-555-SOMATECH</span>
+                        <span class="text-[var(--color-text-muted)]">+1-555-SOMATICX</span>
                     </li>
                     <li class="flex items-start gap-3">
                         <svg class="w-5 h-5 text-[var(--color-accent)] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -85,7 +85,7 @@
 
         {{-- Copyright --}}
         <div class="pt-8 border-t border-[var(--color-border)] flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-[var(--color-text-muted)]">
-            <p>&copy; {{ date('Y') }} SomaTech. All rights reserved.</p>
+            <p>&copy; {{ date('Y') }} Somaticx. All rights reserved.</p>
             <div class="flex gap-6">
                 <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
                 <a href="#" class="hover:text-white transition-colors">Terms of Service</a>

@@ -1,13 +1,13 @@
 <x-layouts.app>
     @php
         $seoTitle = null;
-        $seoDescription = 'SomaTech specializes in Website Development & Maintenance and App Development. Transform your digital presence with our expert team.';
+        $seoDescription = 'Somaticx specializes in Website Development & Maintenance and App Development. Transform your digital presence with our expert team.';
     @endphp
 
     {{-- Hero Section - SRS FR-001 --}}
     <x-hero
         title="We Build <span class='gradient-text'>Digital Excellence</span>"
-        subtitle="SomaTech transforms your ideas into powerful web and mobile applications that drive business growth."
+        subtitle="Somaticx transforms your ideas into powerful web and mobile applications that drive business growth."
         :ctas="[
             ['text' => 'View Our Work', 'url' => route('portfolio.index'), 'primary' => true],
             ['text' => 'Start a Project', 'url' => route('contact.index'), 'primary' => false],
@@ -15,13 +15,19 @@
     />
 
     {{-- Tech Marquee - SRS FR-003 --}}
-    <section class="py-12 border-y border-[var(--color-border)] overflow-hidden">
+    <section class="py-12 border-y border-[var(--color-border)] overflow-hidden bg-[var(--color-bg-surface)]/50">
         <div class="flex animate-marquee whitespace-nowrap">
             @foreach(['Laravel', 'React', 'Vue.js', 'Node.js', 'PHP', 'MySQL', 'Tailwind CSS', 'Alpine.js', 'Swift', 'Kotlin', 'Flutter', 'AWS'] as $tech)
-                <span class="mx-8 text-2xl font-semibold text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors">{{ $tech }}</span>
+                <span class="inline-flex items-center mx-8 text-2xl font-semibold text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors">
+                    <span class="mr-4 text-[var(--color-accent)]/50">•</span>
+                    {{ $tech }}
+                </span>
             @endforeach
             @foreach(['Laravel', 'React', 'Vue.js', 'Node.js', 'PHP', 'MySQL', 'Tailwind CSS', 'Alpine.js', 'Swift', 'Kotlin', 'Flutter', 'AWS'] as $tech)
-                <span class="mx-8 text-2xl font-semibold text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors">{{ $tech }}</span>
+                <span class="inline-flex items-center mx-8 text-2xl font-semibold text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors">
+                    <span class="mr-4 text-[var(--color-accent)]/50">•</span>
+                    {{ $tech }}
+                </span>
             @endforeach
         </div>
     </section>
@@ -155,9 +161,9 @@
                     <x-testimonial-card :testimonial="$testimonial" />
                 @empty
                     @foreach([
-                        ['name' => 'John Smith', 'company' => 'TechCorp', 'role' => 'CEO', 'content' => 'SomaTech delivered an exceptional website that exceeded our expectations. Their attention to detail and technical expertise is unmatched.', 'rating' => 5],
-                        ['name' => 'Sarah Johnson', 'company' => 'StartupXYZ', 'role' => 'Founder', 'content' => 'Working with SomaTech was a pleasure from start to finish. They understood our vision and brought it to life perfectly.', 'rating' => 5],
-                        ['name' => 'Michael Chen', 'company' => 'InnovateCo', 'role' => 'CTO', 'content' => 'The mobile app SomaTech built for us has been a game-changer. Professional team, excellent communication, and outstanding results.', 'rating' => 5],
+                        ['name' => 'John Smith', 'company' => 'TechCorp', 'role' => 'CEO', 'content' => 'Somaticx delivered an exceptional website that exceeded our expectations. Their attention to detail and technical expertise is unmatched.', 'rating' => 5],
+                        ['name' => 'Sarah Johnson', 'company' => 'StartupXYZ', 'role' => 'Founder', 'content' => 'Working with Somaticx was a pleasure from start to finish. They understood our vision and brought it to life perfectly.', 'rating' => 5],
+                        ['name' => 'Michael Chen', 'company' => 'InnovateCo', 'role' => 'CTO', 'content' => 'The mobile app Somaticx built for us has been a game-changer. Professional team, excellent communication, and outstanding results.', 'rating' => 5],
                     ] as $placeholder)
                         <div class="bg-[var(--color-bg-primary)] p-8 rounded-2xl border border-[var(--color-border)]">
                             <div class="flex gap-1 mb-4">
@@ -208,17 +214,4 @@
             </div>
         </div>
     </section>
-
-    <style>
-        @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-        .animate-marquee {
-            animation: marquee 30s linear infinite;
-        }
-        .animate-marquee:hover {
-            animation-play-state: paused;
-        }
-    </style>
 </x-layouts.app>

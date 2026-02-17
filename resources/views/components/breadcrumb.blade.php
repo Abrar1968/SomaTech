@@ -1,6 +1,7 @@
-@props(['crumbs'])
+@props(['items' => []])
 
 @php
+    $crumbs = $items;
     $jsonLd = [
         '@context' => 'https://schema.org',
         '@type' => 'BreadcrumbList',
@@ -15,8 +16,9 @@
     ];
 @endphp
 
+@if(count($crumbs) > 0)
 <nav aria-label="Breadcrumb" class="mb-8">
-    <ol class="flex items-center gap-2 text-sm text-[var(--color-text-muted)]">
+    <ol class="flex items-center flex-wrap gap-2 text-sm text-[var(--color-text-muted)]">
         @foreach($crumbs as $index => $crumb)
             <li class="flex items-center">
                 @if($loop->last)
@@ -25,7 +27,7 @@
                     <a href="{{ $crumb['url'] }}" class="hover:text-white transition-colors">
                         {{ $crumb['label'] }}
                     </a>
-                    <svg class="w-4 h-4 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-4 h-4 mx-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                     </svg>
                 @endif
@@ -36,5 +38,6 @@
 
 {{-- Structured Data - JSON-LD --}}
 <script type="application/ld+json">
-    {!! json_encode($jsonLd, JSON_UNESCAPED_SLASHES) !!}
+    {!! json_encode($jsonLd, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
 </script>
+@endif

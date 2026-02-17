@@ -1,11 +1,11 @@
 @props(['title' => null, 'description' => null, 'image' => null, 'type' => 'website'])
 
 @php
-    $siteName = config('app.name', 'SomaTech');
+    $siteName = config('app.name', 'Somaticx');
     $siteUrl = config('app.url');
 
     $pageTitle = $title ? "{$title} | {$siteName}" : "{$siteName} | Web & App Development";
-    $pageDescription = $description ?? 'SomaTech specializes in Website Development & Maintenance and App Development. Transform your digital presence with our expert team.';
+    $pageDescription = $description ?? 'Somaticx specializes in Website Development & Maintenance and App Development. Transform your digital presence with our expert team.';
     $pageImage = $image ?? asset('images/og-default.jpg');
     $canonicalUrl = url()->current();
 @endphp
@@ -41,19 +41,19 @@
 {{-- JSON-LD Schema - SRS NFR-012 --}}
 <script type="application/ld+json">
 {
-    "@context": "https://schema.org",
-    "@type": "Organization",
+    "@@context": "https://schema.org",
+    "@@type": "Organization",
     "name": "{{ $siteName }}",
     "url": "{{ $siteUrl }}",
     "logo": "{{ asset('images/logo.png') }}",
     "description": "{{ $pageDescription }}",
     "sameAs": [
-        "https://linkedin.com/company/somatech",
-        "https://github.com/somatech"
+        "https://linkedin.com/company/somaticx",
+        "https://github.com/somaticx"
     ],
     "contactPoint": {
-        "@type": "ContactPoint",
-        "email": "hello@somatech.com",
+        "@@type": "ContactPoint",
+        "email": "hello@somaticx.com",
         "contactType": "customer service"
     }
 }
@@ -62,12 +62,12 @@
 @if($type === 'website' && request()->routeIs('home'))
 <script type="application/ld+json">
 {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
+    "@@context": "https://schema.org",
+    "@@type": "WebSite",
     "name": "{{ $siteName }}",
     "url": "{{ $siteUrl }}",
     "potentialAction": {
-        "@type": "SearchAction",
+        "@@type": "SearchAction",
         "target": "{{ $siteUrl }}/portfolio?q={search_term_string}",
         "query-input": "required name=search_term_string"
     }

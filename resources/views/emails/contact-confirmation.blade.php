@@ -15,7 +15,7 @@ We have received your inquiry and our team will get back to you within **24 hour
 If you have any additional information to share, feel free to reply to this email.
 
 <x-mail::button :url="config('app.url')">
-Visit SomaTech
+Visit Somaticx
 </x-mail::button>
 
 Best regards,<br>

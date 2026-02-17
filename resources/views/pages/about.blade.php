@@ -1,7 +1,7 @@
 <x-layouts.app>
     @php
         $seoTitle = 'About Us';
-        $seoDescription = 'Learn about SomaTech - our mission, values, and the talented team behind our web and app development services.';
+        $seoDescription = 'Learn about Somaticx - our mission, values, and the talented team behind our web and app development services.';
     @endphp
 
     {{-- Page Hero - SRS FR-009 --}}
@@ -10,7 +10,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div data-gsap="fade-up">
                     <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold font-display mb-6">
-                        We Are <span class="gradient-text">SomaTech</span>
+                        We Are <span class="gradient-text">Somaticx</span>
                     </h1>
                     <p class="text-xl text-[var(--color-text-muted)] mb-8">
                         A passionate team of developers, designers, and digital strategists dedicated to transforming businesses through innovative technology solutions.
@@ -97,7 +97,7 @@
                                 <div class="team-card-back absolute inset-0 backface-hidden rotate-y-180 bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent-2)] rounded-2xl p-6 flex flex-col justify-between">
                                     <div>
                                         <h3 class="text-xl font-semibold mb-3 text-white">{{ $placeholder['name'] }}</h3>
-                                        <p class="text-sm mb-4 text-white/90">Expert {{ $placeholder['role'] }} at SomaTech with years of experience delivering exceptional results.</p>
+                                        <p class="text-sm mb-4 text-white/90">Expert {{ $placeholder['role'] }} at Somaticx with years of experience delivering exceptional results.</p>
                                         <div class="flex flex-wrap gap-2 mb-4">
                                             @foreach($placeholder['skills'] as $skill)
                                                 <span class="text-xs px-2 py-1 rounded bg-white/20 text-white">{{ $skill }}</span>

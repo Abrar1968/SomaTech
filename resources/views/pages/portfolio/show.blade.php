@@ -1,7 +1,7 @@
 <x-layouts.app>
     @php
         $seoTitle = $project->title ?? 'Project Case Study';
-        $seoDescription = $project->excerpt ?? 'Explore this project case study to see how SomaTech delivered exceptional results.';
+        $seoDescription = $project->excerpt ?? 'Explore this project case study to see how Somaticx delivered exceptional results.';
     @endphp
 
     {{-- Breadcrumb --}}

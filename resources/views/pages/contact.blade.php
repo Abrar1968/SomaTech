@@ -1,7 +1,7 @@
 <x-layouts.app>
     @php
         $seoTitle = 'Contact Us';
-        $seoDescription = 'Get in touch with SomaTech for your web and app development needs. We\'d love to hear about your project.';
+        $seoDescription = 'Get in touch with Somaticx for your web and app development needs. We\'d love to hear about your project.';
     @endphp
 
     {{-- Page Hero --}}
@@ -35,8 +35,8 @@
                             </div>
                             <div>
                                 <h3 class="font-semibold mb-1">Email Us</h3>
-                                <a href="mailto:hello@somatech.com" class="text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors">
-                                    hello@somatech.com
+                                <a href="mailto:hello@somaticx.com" class="text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors">
+                                    hello@somaticx.com
                                 </a>
                             </div>
                         </div>
@@ -49,7 +49,7 @@
                             </div>
                             <div>
                                 <h3 class="font-semibold mb-1">Call Us</h3>
-                                <p class="text-[var(--color-text-muted)]">+1-555-SOMATECH</p>
+                                <p class="text-[var(--color-text-muted)]">+1-555-SOMATICX</p>
                             </div>
                         </div>
 

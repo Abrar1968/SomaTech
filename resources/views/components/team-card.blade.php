@@ -35,7 +35,7 @@
             <div>
                 <h3 class="text-xl font-semibold mb-3 text-white">{{ $member->name }}</h3>
                 <p class="text-sm mb-4 text-white/90 line-clamp-4">
-                    {{ $member->bio ?? 'Expert ' . $member->role . ' at SomaTech' }}
+                    {{ $member->bio ?? 'Expert ' . $member->role . ' at Somaticx' }}
                 </p>
 
                 @if($member->skills && is_array($member->skills))

@@ -1,6 +1,6 @@
 /**
- * SomaTech Admin Panel JavaScript
- * 
+ * Somaticx Admin Panel JavaScript
+ *
  * Handles admin-specific functionality including:
  * - Sidebar toggle
  * - Form interactions
@@ -34,7 +34,7 @@ document.querySelectorAll('input[type="file"][data-preview]').forEach((input) =>
     input.addEventListener('change', function () {
         const previewId = this.dataset.preview;
         const preview = document.getElementById(previewId);
-        
+
         if (preview && this.files && this.files[0]) {
             const reader = new FileReader();
             reader.onload = (e) => {
@@ -79,7 +79,7 @@ if (titleInput && slugInput) {
                 .replace(/(^-|-$)/g, '');
         }
     });
-    
+
     slugInput.addEventListener('input', function () {
         this.dataset.edited = 'true';
     });
@@ -88,7 +88,7 @@ if (titleInput && slugInput) {
 // Toast notifications
 window.showToast = (message, type = 'success') => {
     const container = document.getElementById('toast-container') || createToastContainer();
-    
+
     const toast = document.createElement('div');
     toast.className = `
         flex items-center gap-3 px-4 py-3 rounded-lg shadow-lg transform translate-x-full transition-transform duration-300
@@ -97,7 +97,7 @@ window.showToast = (message, type = 'success') => {
         ${type === 'warning' ? 'bg-yellow-500/90 text-white' : ''}
         ${type === 'info' ? 'bg-blue-500/90 text-white' : ''}
     `;
-    
+
     toast.innerHTML = `
         <span>${message}</span>
         <button class="ml-2 hover:opacity-75" onclick="this.parentElement.remove()">
@@ -106,14 +106,14 @@ window.showToast = (message, type = 'success') => {
             </svg>
         </button>
     `;
-    
+
     container.appendChild(toast);
-    
+
     // Animate in
     requestAnimationFrame(() => {
         toast.classList.remove('translate-x-full');
     });
-    
+
     // Auto-remove after 5 seconds
     setTimeout(() => {
         toast.classList.add('translate-x-full');

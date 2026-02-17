@@ -1,5 +1,5 @@
 # STEP 2: Frontend Layout & UI Components ✅
-## SomaTech Portfolio Website Implementation
+## Somaticx Portfolio Website Implementation
 
 > **SRS Reference:** Sections 6, 9 | **Priority:** Critical | **Duration:** 1.5 weeks
 > **Status:** ✅ COMPLETED
@@ -225,7 +225,7 @@ body {
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="robots" content="noindex, nofollow"> {{-- SRS CONST-007 --}}
     
-    <title>{{ $title ?? 'Dashboard' }} - SomaTech Admin</title>
+    <title>{{ $title ?? 'Dashboard' }} - Somaticx Admin</title>
     
     @vite(['resources/css/app.css', 'resources/js/admin.js'])
 </head>
@@ -287,7 +287,7 @@ body {
                 <div class="w-10 h-10 bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent-2)] rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
                     <span class="text-white font-bold text-xl">S</span>
                 </div>
-                <span class="text-xl font-bold font-display">SomaTech</span>
+                <span class="text-xl font-bold font-display">Somaticx</span>
             </a>
             
             {{-- Desktop Navigation - SRS UI-002 --}}
@@ -663,7 +663,7 @@ body {
             <div>
                 <h3 class="text-xl font-semibold mb-3">{{ $member->name }}</h3>
                 <p class="text-sm mb-4 line-clamp-4">
-                    {{ $member->bio ?? 'Expert ' . $member->role . ' at SomaTech' }}
+                    {{ $member->bio ?? 'Expert ' . $member->role . ' at Somaticx' }}
                 </p>
                 
                 @if($member->skills)
@@ -1166,7 +1166,7 @@ function customCursor() {
                     <div class="w-10 h-10 bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent-2)] rounded-lg flex items-center justify-center">
                         <span class="text-white font-bold text-xl">S</span>
                     </div>
-                    <span class="text-xl font-bold font-display">SomaTech</span>
+                    <span class="text-xl font-bold font-display">Somaticx</span>
                 </div>
                 <p class="text-[var(--color-text-muted)] text-sm mb-6">
                     Transforming ideas into digital excellence through innovative web and app development.
@@ -1214,10 +1214,10 @@ function customCursor() {
                 <h4 class="font-semibold mb-4">Get in Touch</h4>
                 <ul class="space-y-2 text-sm">
                     <li class="text-[var(--color-text-muted)]">
-                        <a href="mailto:hello@somatech.com" class="hover:text-white transition-colors">hello@somatech.com</a>
+                        <a href="mailto:hello@somaticx.com" class="hover:text-white transition-colors">hello@somaticx.com</a>
                     </li>
                     <li class="text-[var(--color-text-muted)]">
-                        +1-555-SOMATECH
+                        +1-555-SOMATICX
                     </li>
                 </ul>
             </div>
@@ -1225,7 +1225,7 @@ function customCursor() {
         
         {{-- Copyright --}}
         <div class="pt-8 border-t border-[var(--color-border)] text-center text-sm text-[var(--color-text-muted)]">
-            <p>&copy; {{ date('Y') }} SomaTech. All rights reserved.</p>
+            <p>&copy; {{ date('Y') }} Somaticx. All rights reserved.</p>
         </div>
     </div>
 </footer>

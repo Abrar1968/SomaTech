@@ -19,9 +19,9 @@ Alpine.start();
 const initGSAP = async () => {
     const { gsap } = await import('gsap');
     const { ScrollTrigger } = await import('gsap/ScrollTrigger');
-    
+
     gsap.registerPlugin(ScrollTrigger);
-    
+
     // Fade-up animations
     gsap.utils.toArray('[data-gsap="fade-up"]').forEach((element) => {
         const delay = element.dataset.gsapDelay || 0;
@@ -38,7 +38,7 @@ const initGSAP = async () => {
             ease: 'power3.out',
         });
     });
-    
+
     // Fade-in animations
     gsap.utils.toArray('[data-gsap="fade-in"]').forEach((element) => {
         const delay = element.dataset.gsapDelay || 0;
@@ -54,7 +54,7 @@ const initGSAP = async () => {
             ease: 'power2.out',
         });
     });
-    
+
     // Scale animations
     gsap.utils.toArray('[data-gsap="scale"]').forEach((element) => {
         const delay = element.dataset.gsapDelay || 0;
@@ -71,7 +71,7 @@ const initGSAP = async () => {
             ease: 'back.out(1.7)',
         });
     });
-    
+
     // Stagger children animations
     gsap.utils.toArray('[data-gsap="stagger"]').forEach((container) => {
         const children = container.children;
@@ -103,7 +103,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', function (e) {
         const targetId = this.getAttribute('href');
         if (targetId === '#') return;
-        
+
         const target = document.querySelector(targetId);
         if (target) {
             e.preventDefault();

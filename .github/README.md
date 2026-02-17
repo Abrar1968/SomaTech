@@ -1,6 +1,6 @@
-# GitHub Configuration for SomaTech Portfolio
+# GitHub Configuration for Somaticx Portfolio
 
-This directory contains GitHub-specific configuration files for the SomaTech Portfolio Website project.
+This directory contains GitHub-specific configuration files for the Somaticx Portfolio Website project.
 
 ## Files Overview
 

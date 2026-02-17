@@ -20,7 +20,7 @@ class ContactConfirmationMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Thank you for contacting SomaTech',
+            subject: 'Thank you for contacting Somaticx',
         );
     }
 

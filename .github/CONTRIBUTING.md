@@ -1,8 +1,8 @@
-# Contributing to SomaTech Portfolio Website
+# Contributing to Somaticx Portfolio Website
 
 > **Document Version:** 1.0.0 | **Last Updated:** February 2026
 
-This guide provides instructions for developers contributing to the SomaTech Portfolio Website project.
+This guide provides instructions for developers contributing to the Somaticx Portfolio Website project.
 
 ---
 
@@ -56,8 +56,8 @@ This guide provides instructions for developers contributing to the SomaTech Por
 
 ```bash
 # Clone the repository
-git clone https://github.com/Abrar1968/SomaTech.git
-cd SomaTech
+git clone https://github.com/Abrar1968/Somaticx.git
+cd Somaticx
 
 # Install PHP dependencies
 composer install
@@ -389,7 +389,7 @@ All spacing uses **8px base unit** (8, 16, 24, 32, 48, 64, 96, 128px).
 ## Questions?
 
 Refer to the detailed documentation in `/docs/`:
-- [SomaTech_SRS_v1.0.md](../docs/SomaTech_SRS_v1.0.md) - Full requirements
+- [Somaticx_SRS_v1.0.md](../docs/Somaticx_SRS_v1.0.md) - Full requirements
 - [STEP_01_FOUNDATION_BACKEND.md](../docs/STEP_01_FOUNDATION_BACKEND.md)
 - [STEP_02_FRONTEND_UI.md](../docs/STEP_02_FRONTEND_UI.md)
 - [STEP_03_CONTROLLERS_INTEGRATION.md](../docs/STEP_03_CONTROLLERS_INTEGRATION.md)
