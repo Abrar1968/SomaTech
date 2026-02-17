@@ -1,0 +1,26 @@
+# CODEOWNERS for SomaTech Portfolio
+# These owners will be the default owners for everything in the repo
+# Unless a later match takes precedence
+
+# Global owners
+* @Abrar1968
+
+# Documentation
+/docs/ @Abrar1968
+*.md @Abrar1968
+
+# Backend
+/app/ @Abrar1968
+/database/ @Abrar1968
+/routes/ @Abrar1968
+/config/ @Abrar1968
+
+# Frontend
+/resources/ @Abrar1968
+/public/ @Abrar1968
+
+# Tests
+/tests/ @Abrar1968
+
+# CI/CD
+/.github/ @Abrar1968
