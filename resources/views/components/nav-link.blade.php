@@ -2,14 +2,16 @@
 
 <a
     {{ $attributes }}
-    class="relative px-1 py-2 text-sm font-medium tracking-wide transition-colors duration-200 {{ $active ? 'text-white' : 'text-text-muted hover:text-white' }} group"
+    @class([
+        'relative px-4 py-2 text-sm font-medium tracking-wide rounded-full transition-all duration-300 group',
+        'text-white bg-white/10' => $active,
+        'text-text-muted hover:text-white hover:bg-white/5' => !$active,
+    ])
 >
-    {{ $slot }}
+    <span class="relative z-10">{{ $slot }}</span>
 
-    {{-- Active Indicator - SRS UI-004 --}}
+    {{-- Active/Hover Indicator - SRS UI-004 --}}
     @if($active)
-        <span class="absolute -bottom-1 left-0 right-0 h-0.5 bg-linear-to-r from-accent to-accent-2"></span>
-    @else
-        <span class="absolute -bottom-1 left-0 right-0 h-0.5 bg-linear-to-r from-accent to-accent-2 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></span>
+        <span class="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-accent"></span>
     @endif
 </a>

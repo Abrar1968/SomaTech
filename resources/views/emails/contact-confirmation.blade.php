@@ -1,23 +1,49 @@
 <x-mail::message>
-# Thank You, {{ $inquiry->name }}!
+# Hello {{ $inquiry->name }}! 👋
 
-We have received your inquiry and our team will get back to you within **24 hours**.
+Thank you for reaching out to us. We're excited to learn about your project!
 
-## Your Message Summary
+Our team has received your inquiry and will review it carefully. You can expect a personalized response within **24 hours** during business days.
 
-**Service Interest:** {{ $inquiry->service_interest }}
+---
+
+## Here's What You Shared
+
+<x-mail::panel>
+**Service of Interest**
+{{ $inquiry->service_interest }}
+
 @if($inquiry->budget_range)
-**Budget Range:** {{ $inquiry->budget_range }}
+**Budget Range**
+{{ $inquiry->budget_range }}
 @endif
 
-> {{ Str::limit($inquiry->message, 200) }}
+**Your Message**
+{{ Str::limit($inquiry->message, 300) }}
+</x-mail::panel>
 
-If you have any additional information to share, feel free to reply to this email.
+---
 
-<x-mail::button :url="config('app.url')">
-Visit Somaticx
+## What Happens Next?
+
+1. **Review** - Our team will carefully review your requirements
+2. **Research** - We'll prepare relevant suggestions for your project
+3. **Connect** - A team member will reach out with next steps
+
+If you have additional information to share or questions in the meantime, simply reply to this email.
+
+<x-mail::button :url="config('app.url')" color="primary">
+Explore Our Work
 </x-mail::button>
 
-Best regards,<br>
-The {{ config('app.name') }} Team
+---
+
+We're looking forward to potentially working together!
+
+Warm regards,<br>
+**The {{ config('app.name') }} Team**
+
+<x-mail::subcopy>
+This is an automated confirmation email. If you didn't submit this inquiry, please disregard this message.
+</x-mail::subcopy>
 </x-mail::message>
