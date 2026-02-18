@@ -1,8 +1,11 @@
-@props(['project', 'featured' => false])
+@props(['project', 'featured' => false, 'index' => 0])
 
 <article
     class="project-card group relative rounded-2xl overflow-hidden bg-[var(--color-bg-elevated)] border border-white/5 hover:border-accent/30 transition-all duration-500"
-    x-data="{ hovered: false }"
+    x-data="{ hovered: false, visible: false }"
+    x-intersect.once="setTimeout(() => visible = true, {{ $index * 100 }})"
+    :class="visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'"
+    style="transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);"
     @mouseenter="hovered = true"
     @mouseleave="hovered = false"
 >

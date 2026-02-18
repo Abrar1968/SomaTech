@@ -114,7 +114,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @forelse($services ?? [] as $service)
-                    <x-service-card :service="$service" />
+                    <x-service-card :service="$service" :index="$loop->index" />
                 @empty
                     @foreach ([['title' => 'Website Development', 'tagline' => 'Custom web solutions', 'description' => 'From simple landing pages to complex web applications, we build websites that perform.', 'icon' => 'code'], ['title' => 'App Development', 'tagline' => 'Mobile-first approach', 'description' => 'Native and cross-platform mobile apps that deliver exceptional user experiences.', 'icon' => 'mobile'], ['title' => 'Website Maintenance', 'tagline' => 'Keep it running smoothly', 'description' => 'Ongoing support, updates, and optimization to keep your digital presence at its best.', 'icon' => 'settings']] as $index => $placeholder)
                         <div class="service-card group relative p-8 rounded-3xl bg-gradient-to-b from-white/5 to-transparent border border-white/5 hover:border-accent/30 transition-all duration-500"
@@ -208,7 +208,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @forelse($projects ?? [] as $project)
-                    <x-project-card :project="$project" />
+                    <x-project-card :project="$project" :index="$loop->index" />
                 @empty
                     @for ($i = 0; $i < 6; $i++)
                         <div class="project-card group relative rounded-2xl overflow-hidden bg-[var(--color-bg-elevated)] border border-white/5"
@@ -351,7 +351,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @forelse($testimonials ?? [] as $testimonial)
-                    <x-testimonial-card :testimonial="$testimonial" />
+                    <x-testimonial-card :testimonial="$testimonial" :index="$loop->index" />
                 @empty
                     @foreach ([['name' => 'John Smith', 'company' => 'TechCorp', 'role' => 'CEO', 'content' => 'Somaticx delivered an exceptional website that exceeded our expectations. Their attention to detail and technical expertise is unmatched.', 'rating' => 5], ['name' => 'Sarah Johnson', 'company' => 'StartupXYZ', 'role' => 'Founder', 'content' => 'Working with Somaticx was a pleasure from start to finish. They understood our vision and brought it to life perfectly.', 'rating' => 5], ['name' => 'Michael Chen', 'company' => 'InnovateCo', 'role' => 'CTO', 'content' => 'The mobile app Somaticx built for us has been a game-changer. Professional team, excellent communication, and outstanding results.', 'rating' => 5]] as $index => $placeholder)
                         <div class="testimonial-card relative p-8 rounded-3xl bg-[var(--color-bg-primary)] border border-white/5 hover:border-accent/20 transition-all duration-500"

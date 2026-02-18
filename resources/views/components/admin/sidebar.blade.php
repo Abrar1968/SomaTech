@@ -183,7 +183,7 @@
                 <span class="font-medium text-sm">Need Help?</span>
             </div>
             <p class="text-xs text-text-muted mb-3">Check our documentation for guides and tutorials.</p>
-            <a href="#" class="inline-flex items-center gap-1 text-xs text-accent hover:text-accent-2 transition-colors">
+            <a href="{{ route('admin.docs.index') }}" class="inline-flex items-center gap-1 text-xs text-accent hover:text-accent-2 transition-colors">
                 View Docs
                 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>

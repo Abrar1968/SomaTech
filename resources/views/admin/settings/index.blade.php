@@ -6,8 +6,164 @@
             <p class="text-text-muted mt-1">Configure your portfolio website settings</p>
         </div>
 
-        <form action="{{ route('admin.settings.update') }}" method="POST" class="space-y-6">
+        <form action="{{ route('admin.settings.update') }}" method="POST" enctype="multipart/form-data" class="space-y-6">
             @csrf
+
+            {{-- Logo & Branding --}}
+            <div class="bg-[var(--color-bg-surface)] rounded-2xl border border-white/5 p-6 space-y-5">
+                <h2 class="text-lg font-semibold flex items-center gap-2">
+                    <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                    </svg>
+                    Logo & Branding
+                </h2>
+
+                <div class="grid sm:grid-cols-2 gap-6">
+                    {{-- Main Logo --}}
+                    <div class="space-y-3">
+                        <label class="text-sm font-medium text-text-muted">Site Logo</label>
+                        <div class="relative">
+                            <div class="w-full h-32 rounded-xl border-2 border-dashed border-white/10 hover:border-accent/50 transition-colors flex items-center justify-center bg-[var(--color-bg-primary)] overflow-hidden group" x-data="{ preview: '{{ isset($settings['site_logo']) ? Storage::url($settings['site_logo']) : '' }}' }">
+                                <template x-if="preview">
+                                    <div class="relative w-full h-full">
+                                        <img :src="preview" alt="Logo preview" class="w-full h-full object-contain p-4">
+                                        <button type="button" @click="preview = ''; $refs.logoInput.value = ''" class="absolute top-2 right-2 w-8 h-8 bg-red-500/80 hover:bg-red-500 rounded-lg flex items-center justify-center transition-colors">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </template>
+                                <template x-if="!preview">
+                                    <div class="text-center p-4">
+                                        <svg class="w-8 h-8 mx-auto text-text-muted mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                        </svg>
+                                        <p class="text-sm text-text-muted">Click to upload logo</p>
+                                        <p class="text-xs text-text-muted/60 mt-1">PNG, SVG, JPG (max 2MB)</p>
+                                    </div>
+                                </template>
+                                <input
+                                    type="file"
+                                    name="site_logo"
+                                    x-ref="logoInput"
+                                    @change="if ($event.target.files[0]) preview = URL.createObjectURL($event.target.files[0])"
+                                    accept="image/png,image/svg+xml,image/jpeg"
+                                    class="absolute inset-0 opacity-0 cursor-pointer"
+                                >
+                            </div>
+                        </div>
+                        <p class="text-xs text-text-muted/60">Recommended: 200x50px transparent PNG</p>
+                    </div>
+
+                    {{-- Favicon --}}
+                    <div class="space-y-3">
+                        <label class="text-sm font-medium text-text-muted">Favicon</label>
+                        <div class="relative">
+                            <div class="w-full h-32 rounded-xl border-2 border-dashed border-white/10 hover:border-accent/50 transition-colors flex items-center justify-center bg-[var(--color-bg-primary)] overflow-hidden" x-data="{ preview: '{{ isset($settings['site_favicon']) ? Storage::url($settings['site_favicon']) : '' }}' }">
+                                <template x-if="preview">
+                                    <div class="relative w-full h-full flex items-center justify-center">
+                                        <img :src="preview" alt="Favicon preview" class="w-16 h-16 object-contain">
+                                        <button type="button" @click="preview = ''; $refs.faviconInput.value = ''" class="absolute top-2 right-2 w-8 h-8 bg-red-500/80 hover:bg-red-500 rounded-lg flex items-center justify-center transition-colors">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </template>
+                                <template x-if="!preview">
+                                    <div class="text-center p-4">
+                                        <svg class="w-8 h-8 mx-auto text-text-muted mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                        </svg>
+                                        <p class="text-sm text-text-muted">Click to upload favicon</p>
+                                        <p class="text-xs text-text-muted/60 mt-1">ICO, PNG (max 1MB)</p>
+                                    </div>
+                                </template>
+                                <input
+                                    type="file"
+                                    name="site_favicon"
+                                    x-ref="faviconInput"
+                                    @change="if ($event.target.files[0]) preview = URL.createObjectURL($event.target.files[0])"
+                                    accept="image/x-icon,image/png,image/ico"
+                                    class="absolute inset-0 opacity-0 cursor-pointer"
+                                >
+                            </div>
+                        </div>
+                        <p class="text-xs text-text-muted/60">Recommended: 32x32px or 64x64px ICO/PNG</p>
+                    </div>
+                </div>
+
+                {{-- Logo for Dark/Light modes --}}
+                <div class="pt-4 border-t border-white/5">
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        {{-- Light Mode Logo --}}
+                        <div class="space-y-3">
+                            <label class="text-sm font-medium text-text-muted">Logo (Light Background)</label>
+                            <div class="relative">
+                                <div class="w-full h-24 rounded-xl border-2 border-dashed border-white/10 hover:border-accent/50 transition-colors flex items-center justify-center bg-white overflow-hidden" x-data="{ preview: '{{ isset($settings['site_logo_light']) ? Storage::url($settings['site_logo_light']) : '' }}' }">
+                                    <template x-if="preview">
+                                        <div class="relative w-full h-full">
+                                            <img :src="preview" alt="Light logo preview" class="w-full h-full object-contain p-3">
+                                            <button type="button" @click="preview = ''; $refs.logoLightInput.value = ''" class="absolute top-2 right-2 w-6 h-6 bg-red-500/80 hover:bg-red-500 rounded-lg flex items-center justify-center transition-colors">
+                                                <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </template>
+                                    <template x-if="!preview">
+                                        <div class="text-center p-2">
+                                            <p class="text-sm text-gray-400">Optional dark variant</p>
+                                        </div>
+                                    </template>
+                                    <input
+                                        type="file"
+                                        name="site_logo_light"
+                                        x-ref="logoLightInput"
+                                        @change="if ($event.target.files[0]) preview = URL.createObjectURL($event.target.files[0])"
+                                        accept="image/png,image/svg+xml,image/jpeg"
+                                        class="absolute inset-0 opacity-0 cursor-pointer"
+                                    >
+                                </div>
+                            </div>
+                        </div>
+
+                        {{-- OG Image --}}
+                        <div class="space-y-3">
+                            <label class="text-sm font-medium text-text-muted">Default OG Image</label>
+                            <div class="relative">
+                                <div class="w-full h-24 rounded-xl border-2 border-dashed border-white/10 hover:border-accent/50 transition-colors flex items-center justify-center bg-[var(--color-bg-primary)] overflow-hidden" x-data="{ preview: '{{ isset($settings['og_image']) ? Storage::url($settings['og_image']) : '' }}' }">
+                                    <template x-if="preview">
+                                        <div class="relative w-full h-full">
+                                            <img :src="preview" alt="OG image preview" class="w-full h-full object-cover">
+                                            <button type="button" @click="preview = ''; $refs.ogImageInput.value = ''" class="absolute top-2 right-2 w-6 h-6 bg-red-500/80 hover:bg-red-500 rounded-lg flex items-center justify-center transition-colors">
+                                                <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </template>
+                                    <template x-if="!preview">
+                                        <div class="text-center p-2">
+                                            <p class="text-sm text-text-muted">Social share image</p>
+                                            <p class="text-xs text-text-muted/60">1200x630px</p>
+                                        </div>
+                                    </template>
+                                    <input
+                                        type="file"
+                                        name="og_image"
+                                        x-ref="ogImageInput"
+                                        @change="if ($event.target.files[0]) preview = URL.createObjectURL($event.target.files[0])"
+                                        accept="image/png,image/jpeg"
+                                        class="absolute inset-0 opacity-0 cursor-pointer"
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             {{-- General Settings --}}
             <div class="bg-[var(--color-bg-surface)] rounded-2xl border border-white/5 p-6 space-y-5">

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\DocsController;
 use App\Http\Controllers\Admin\InquiryController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\ServiceController;
@@ -28,3 +29,5 @@ Route::resource('stats', StatController::class)->except(['show']);
 
 Route::get('settings', [SettingsController::class, 'index'])->name('settings.index');
 Route::post('settings', [SettingsController::class, 'update'])->name('settings.update');
+
+Route::get('docs', [DocsController::class, 'index'])->name('docs.index');

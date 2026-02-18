@@ -98,12 +98,6 @@
             @endforelse
         </div>
 
-        @if($testimonials->hasPages())
-            <div class="flex justify-center">
-                {{ $testimonials->links() }}
-            </div>
-        @endif
-
         {{-- Delete Modal --}}
         <div
             x-show="deleteModal"
