@@ -1,4 +1,4 @@
-# SomaTech Portfolio Website
+# Somaticx Portfolio Website
 ## Software Requirements Specification
 ### Version 1.0.0 · February 2026
 
@@ -8,7 +8,7 @@
 |---|---|
 | Document Version | 1.0.0 |
 | Status | Final Draft |
-| Prepared By | SomaTech Technical Team |
+| Prepared By | Somaticx Technical Team |
 | Date | February 2026 |
 | Confidentiality | Internal — Restricted |
 
@@ -36,11 +36,11 @@
 
 ### 1.1 Purpose
 
-This Software Requirements Specification (SRS) defines all requirements for the SomaTech Portfolio Website. It serves as the authoritative reference for designers, developers, testers, and stakeholders throughout the complete software development lifecycle. Every functional behaviour, non-functional constraint, UI/UX expectation, database schema, and deployment criterion is documented here so the resulting product meets industry standards for top-tier IT firm portfolios.
+This Software Requirements Specification (SRS) defines all requirements for the Somaticx Portfolio Website. It serves as the authoritative reference for designers, developers, testers, and stakeholders throughout the complete software development lifecycle. Every functional behaviour, non-functional constraint, UI/UX expectation, database schema, and deployment criterion is documented here so the resulting product meets industry standards for top-tier IT firm portfolios.
 
 ### 1.2 Scope
 
-The SomaTech Portfolio Website is a publicly accessible, full-stack web application serving two purposes: first, to establish SomaTech's digital brand authority; and second, to convert visitors into qualified project leads. The system specialises in **Website Development & Maintenance** and **App Development**. It comprises three logical layers — a public-facing frontend built with Laravel Blade, Alpine.js, and Tailwind CSS v4; a secure admin dashboard for content management; and a MySQL-backed Laravel application layer. The site must function flawlessly across all modern browsers and device form factors, delivering sub-2-second load times and WCAG 2.1 AA accessibility compliance.
+The Somaticx Portfolio Website is a publicly accessible, full-stack web application serving two purposes: first, to establish Somaticx's digital brand authority; and second, to convert visitors into qualified project leads. The system specialises in **Website Development & Maintenance** and **App Development**. It comprises three logical layers — a public-facing frontend built with Laravel Blade, Alpine.js, and Tailwind CSS v4; a secure admin dashboard for content management; and a MySQL-backed Laravel application layer. The site must function flawlessly across all modern browsers and device form factors, delivering sub-2-second load times and WCAG 2.1 AA accessibility compliance.
 
 ### 1.3 Definitions and Acronyms
 
@@ -80,19 +80,19 @@ Requirements use unique identifiers with the pattern `[PREFIX-###]`. Prefix code
 
 ### 2.1 Product Perspective
 
-The SomaTech Portfolio Website is a standalone product. It integrates with external services including a transactional email provider (SMTP / Mailgun / SendGrid), Google Analytics 4 for visitor analytics, reCAPTCHA v3 for form protection, and a CDN for static asset delivery. The admin dashboard operates behind Laravel's built-in authentication and is accessible only to authorised SomaTech personnel. The public frontend has no user registration — it is a read-only showcase with a single contact submission channel.
+The Somaticx Portfolio Website is a standalone product. It integrates with external services including a transactional email provider (SMTP / Mailgun / SendGrid), Google Analytics 4 for visitor analytics, reCAPTCHA v3 for form protection, and a CDN for static asset delivery. The admin dashboard operates behind Laravel's built-in authentication and is accessible only to authorised Somaticx personnel. The public frontend has no user registration — it is a read-only showcase with a single contact submission channel.
 
 ### 2.2 Target Users
 
 | User Class | Description | Primary Goals |
 |---|---|---|
-| Prospective Client | Businesses or individuals seeking web / app development | Evaluate SomaTech, view portfolio, initiate contact |
+| Prospective Client | Businesses or individuals seeking web / app development | Evaluate Somaticx, view portfolio, initiate contact |
 | Recruiter / Partner | Talent scouts, business partners, investors | Assess tech stack, team capability, and credibility |
-| Admin / Content Editor | SomaTech internal staff managing website content | Add/edit projects, update team info, manage inquiries |
+| Admin / Content Editor | Somaticx internal staff managing website content | Add/edit projects, update team info, manage inquiries |
 
 ### 2.3 Product Functions Summary
 
-At the highest level, the SomaTech Portfolio Website: (1) presents SomaTech's brand identity through an animated, visually stunning hero section; (2) showcases a filterable portfolio of completed projects across web and app development; (3) communicates service offerings with dedicated service pages; (4) builds client trust through testimonials, statistics counters, and team profiles; (5) captures leads via a fully validated, rate-limited contact form; (6) provides a full admin dashboard for content management; and (7) delivers measurable SEO value through structured metadata, canonical URLs, JSON-LD schema, and auto-generated sitemaps.
+At the highest level, the Somaticx Portfolio Website: (1) presents Somaticx's brand identity through an animated, visually stunning hero section; (2) showcases a filterable portfolio of completed projects across web and app development; (3) communicates service offerings with dedicated service pages; (4) builds client trust through testimonials, statistics counters, and team profiles; (5) captures leads via a fully validated, rate-limited contact form; (6) provides a full admin dashboard for content management; and (7) delivers measurable SEO value through structured metadata, canonical URLs, JSON-LD schema, and auto-generated sitemaps.
 
 ### 2.4 Assumptions and Constraints
 
@@ -138,7 +138,7 @@ The system follows Laravel's MVC pattern augmented with a **Service Layer** to k
 | Route | Method | Controller@Method | Description |
 |---|---|---|---|
 | `/` | GET | `HomeController@index` | Landing / Hero page |
-| `/about` | GET | `AboutController@index` | About SomaTech page |
+| `/about` | GET | `AboutController@index` | About Somaticx page |
 | `/services` | GET | `ServiceController@index` | All services listing |
 | `/services/{slug}` | GET | `ServiceController@show` | Single service detail |
 | `/portfolio` | GET | `PortfolioController@index` | Filterable project gallery |
@@ -315,7 +315,7 @@ The MySQL database is designed to 3NF (Third Normal Form) for data integrity, wi
 
 #### 5.1.1 Hero Section
 
-**`[FR-001]`** The homepage MUST render a full-viewport animated Hero Section as the first visible element. The hero MUST include: an animated typewriter or morphing text headline cycling through SomaTech's core services; a value proposition sub-headline; two primary CTAs ("View Our Work" → `/portfolio` and "Start a Project" → `/contact`); and an interactive particle-mesh or Three.js WebGL background canvas that responds to mouse movement.
+**`[FR-001]`** The homepage MUST render a full-viewport animated Hero Section as the first visible element. The hero MUST include: an animated typewriter or morphing text headline cycling through Somaticx's core services; a value proposition sub-headline; two primary CTAs ("View Our Work" → `/portfolio` and "Start a Project" → `/contact`); and an interactive particle-mesh or Three.js WebGL background canvas that responds to mouse movement.
 
 **`[FR-002]`** A scroll-down indicator (chevron/arrow) MUST animate with a looping bounce or pulse at the bottom of the hero viewport and scroll the page smoothly on click.
 
@@ -403,7 +403,7 @@ The MySQL database is designed to 3NF (Third Normal Form) for data integrity, wi
 
 ### 6.1 Design Philosophy
 
-The SomaTech website uses a **dark-first design approach** — a near-black background (`#0D0D0D`) with vibrant accent colours — projecting technical sophistication, modernity, and premium quality consistent with award-winning IT agency aesthetics. The visual language combines glassmorphism cards, gradient text effects, animated borders, and depth-layered backgrounds to create a high-impact first impression.
+The Somaticx website uses a **dark-first design approach** — a near-black background (`#0D0D0D`) with vibrant accent colours — projecting technical sophistication, modernity, and premium quality consistent with award-winning IT agency aesthetics. The visual language combines glassmorphism cards, gradient text effects, animated borders, and depth-layered backgrounds to create a high-impact first impression.
 
 ### 6.2 Colour Palette
 
@@ -464,7 +464,7 @@ A dual-layer cursor consists of a 10px accent-coloured filled circle that follow
 
 **`[UI-001]`** The main navigation MUST be a sticky top bar with glassmorphism background: `backdrop-filter: blur(20px)`, `background: rgba(13,13,13,0.7)`, transitioning to `rgba(13,13,13,0.95)` after 80px of scroll, managed via Alpine.js scroll listener.
 
-**`[UI-002]`** Desktop navigation layout: SomaTech logo (left, with subtle hover glow animation), navigation links (Home, About, Services, Portfolio, Contact) centred, and a "Hire Us" gradient-border CTA button on the right.
+**`[UI-002]`** Desktop navigation layout: Somaticx logo (left, with subtle hover glow animation), navigation links (Home, About, Services, Portfolio, Contact) centred, and a "Hire Us" gradient-border CTA button on the right.
 
 **`[UI-003]`** Mobile navigation: links collapse behind a hamburger icon (3-bar animated to × on open). The mobile menu MUST be a full-screen overlay with staggered link animations — each link slides in from the left 80px with GSAP, staggered 0.08s apart.
 
@@ -715,7 +715,7 @@ Git with GitHub or GitLab. Branch strategy: `main` (production-stable), `develop
 
 ### B. Demo Seeder Data Plan
 
-The `DatabaseSeeder` MUST populate the following realistic content: **3 categories** (Website Development, App Development, Website Maintenance); **12 projects** — 6 web, 4 app, 2 maintenance, with 6 marked as featured; **2 fully detailed service records**; **4 active team members** with realistic bios; **6 testimonials** with 5-star ratings, 4 marked as featured; **8 company stats** (e.g., Projects Delivered: 120+, Happy Clients: 85, Years of Experience: 5, Uptime Guarantee: 99.9%); **15 skills** across Frontend, Backend, and Mobile categories; and **1 admin user** (`admin@somatech.com` / password changeable via `.env`).
+The `DatabaseSeeder` MUST populate the following realistic content: **3 categories** (Website Development, App Development, Website Maintenance); **12 projects** — 6 web, 4 app, 2 maintenance, with 6 marked as featured; **2 fully detailed service records**; **4 active team members** with realistic bios; **6 testimonials** with 5-star ratings, 4 marked as featured; **8 company stats** (e.g., Projects Delivered: 120+, Happy Clients: 85, Years of Experience: 5, Uptime Guarantee: 99.9%); **15 skills** across Frontend, Backend, and Mobile categories; and **1 admin user** (`admin@somaticx.com` / password changeable via `.env`).
 
 ### C. Requirement Traceability Matrix
 
@@ -733,6 +733,6 @@ The `DatabaseSeeder` MUST populate the following realistic content: **3 categori
 
 ---
 
-*SomaTech Portfolio Website — SRS v1.0.0 — February 2026*
+*Somaticx Portfolio Website — SRS v1.0.0 — February 2026*
 
 **CONFIDENTIAL — Internal Use Only**

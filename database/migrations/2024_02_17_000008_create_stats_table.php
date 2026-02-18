@@ -1,0 +1,29 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('stats', function (Blueprint $table) {
+            $table->id();
+            $table->string('label');
+            $table->unsignedInteger('value');
+            $table->string('prefix', 20)->nullable();
+            $table->string('suffix', 20)->nullable();
+            $table->string('icon')->nullable();
+            $table->smallInteger('sort_order')->default(0);
+            $table->timestamps();
+
+            $table->index('sort_order');
+        });
+    }
+
+    public function down(): void
+    {
+        Schema::dropIfExists('stats');
+    }
+};
