@@ -10,35 +10,71 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
+/**
+ * Admin Stat Controller.
+ *
+ * SRS Requirements: FR-013
+ */
 class StatController extends Controller
 {
     public function index(): View
     {
-        return view('welcome');
+        $stats = Stat::query()
+            ->orderBy('sort_order')
+            ->get();
+
+        return view('admin.stats.index', compact('stats'));
     }
 
     public function create(): View
     {
-        return view('welcome');
+        return view('admin.stats.create');
     }
 
     public function store(Request $request): RedirectResponse
     {
-        return redirect()->back();
+        $validated = $request->validate([
+            'label' => 'required|string|max:255',
+            'value' => 'required|integer|min:0',
+            'prefix' => 'nullable|string|max:10',
+            'suffix' => 'nullable|string|max:10',
+            'icon' => 'nullable|string|max:10',
+            'sort_order' => 'nullable|integer|min:0',
+        ]);
+
+        Stat::create($validated);
+
+        return redirect()->route('admin.stats.index')
+            ->with('success', 'Stat created successfully.');
     }
 
     public function edit(Stat $stat): View
     {
-        return view('welcome');
+        return view('admin.stats.edit', compact('stat'));
     }
 
     public function update(Request $request, Stat $stat): RedirectResponse
     {
-        return redirect()->back();
+        $validated = $request->validate([
+            'label' => 'required|string|max:255',
+            'value' => 'required|integer|min:0',
+            'prefix' => 'nullable|string|max:10',
+            'suffix' => 'nullable|string|max:10',
+            'icon' => 'nullable|string|max:10',
+            'sort_order' => 'nullable|integer|min:0',
+        ]);
+
+        $stat->update($validated);
+
+        return redirect()->route('admin.stats.index')
+            ->with('success', 'Stat updated successfully.');
     }
 
     public function destroy(Stat $stat): RedirectResponse
     {
-        return redirect()->back();
+        $stat->delete();
+
+        return redirect()->route('admin.stats.index')
+            ->with('success', 'Stat deleted successfully.');
     }
 }

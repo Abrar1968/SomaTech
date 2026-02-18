@@ -27,4 +27,4 @@ Route::resource('skills', SkillController::class)->except(['show']);
 Route::resource('stats', StatController::class)->except(['show']);
 
 Route::get('settings', [SettingsController::class, 'index'])->name('settings.index');
-Route::post('settings', [SettingsController::class, 'store'])->name('settings.store');
+Route::post('settings', [SettingsController::class, 'update'])->name('settings.update');
