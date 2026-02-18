@@ -67,7 +67,7 @@
 
     {{-- Main Content with smooth reveal --}}
     <main id="main-content"
-          class="min-h-screen"
+          class="min-h-screen pt-24 flex flex-col"
           :class="loaded ? 'opacity-100' : 'opacity-0'"
           style="transition: opacity 0.3s ease-out;">
         {{ $slot }}
