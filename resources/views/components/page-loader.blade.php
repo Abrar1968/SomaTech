@@ -1,5 +1,5 @@
 <div
-    x-data="{ 
+    x-data="{
         show: true,
         progress: 0,
         init() {
@@ -30,10 +30,10 @@
         <div class="relative mb-8">
             {{-- Outer spinning ring --}}
             <div class="absolute inset-0 w-24 h-24 border-2 border-transparent border-t-accent border-r-accent-2 rounded-full animate-spin"></div>
-            
+
             {{-- Inner spinning ring (reverse) --}}
             <div class="absolute inset-2 w-20 h-20 border-2 border-transparent border-b-accent border-l-accent-2 rounded-full animate-spin" style="animation-direction: reverse; animation-duration: 1.5s;"></div>
-            
+
             {{-- Logo container --}}
             <div class="relative w-24 h-24 flex items-center justify-center">
                 <div class="w-16 h-16 bg-gradient-to-br from-accent to-accent-2 rounded-2xl flex items-center justify-center shadow-2xl shadow-accent/30">
@@ -51,7 +51,7 @@
 
         {{-- Progress bar --}}
         <div class="w-48 h-1 bg-white/10 rounded-full overflow-hidden mb-4">
-            <div 
+            <div
                 class="h-full bg-gradient-to-r from-accent to-accent-2 rounded-full transition-all duration-300 ease-out"
                 :style="`width: ${progress}%`"
             ></div>

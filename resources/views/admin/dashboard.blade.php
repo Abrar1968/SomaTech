@@ -1,7 +1,7 @@
 <x-layouts.admin title="Dashboard">
     <div class="space-y-8" x-data="{ loaded: false }" x-init="setTimeout(() => loaded = true, 100)">
         {{-- Page Header --}}
-        <div 
+        <div
             class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4"
             :class="loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'"
             style="transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);"
@@ -36,14 +36,14 @@
                 ['label' => 'New Inquiries', 'value' => $stats['inquiries'] ?? 0, 'icon' => 'M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z', 'gradient' => 'from-amber-500 to-orange-600', 'bg' => 'bg-amber-500/10', 'text' => 'text-amber-400'],
                 ['label' => 'Testimonials', 'value' => $stats['testimonials'] ?? 0, 'icon' => 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z', 'gradient' => 'from-purple-500 to-pink-600', 'bg' => 'bg-purple-500/10', 'text' => 'text-purple-400'],
             ] as $index => $stat)
-                <div 
+                <div
                     class="group relative bg-[var(--color-bg-surface)] rounded-2xl p-6 border border-white/5 hover:border-white/10 transition-all duration-500 overflow-hidden"
                     :class="loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'"
                     style="transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) {{ ($index + 1) * 100 }}ms;"
                 >
                     {{-- Background glow --}}
                     <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br {{ $stat['gradient'] }} opacity-0 group-hover:opacity-10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2 transition-opacity duration-500"></div>
-                    
+
                     <div class="relative flex items-start justify-between">
                         <div>
                             <p class="text-text-muted text-sm font-medium">{{ $stat['label'] }}</p>
@@ -55,7 +55,7 @@
                             </svg>
                         </div>
                     </div>
-                    
+
                     {{-- Decorative line --}}
                     <div class="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r {{ $stat['gradient'] }} opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
@@ -64,7 +64,7 @@
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
             {{-- Recent Inquiries --}}
-            <div 
+            <div
                 class="bg-[var(--color-bg-surface)] rounded-2xl border border-white/5 overflow-hidden"
                 :class="loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'"
                 style="transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.5s;"
@@ -122,7 +122,7 @@
             </div>
 
             {{-- Recent Projects --}}
-            <div 
+            <div
                 class="bg-[var(--color-bg-surface)] rounded-2xl border border-white/5 overflow-hidden"
                 :class="loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'"
                 style="transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.6s;"
@@ -188,7 +188,7 @@
         </div>
 
         {{-- Quick Actions --}}
-        <div 
+        <div
             class="bg-[var(--color-bg-surface)] rounded-2xl border border-white/5 p-6"
             :class="loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'"
             style="transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.7s;"
@@ -208,8 +208,8 @@
                     ['route' => 'admin.team.create', 'label' => 'Add Team Member', 'icon' => 'M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z', 'primary' => false],
                     ['route' => 'admin.testimonials.create', 'label' => 'Add Testimonial', 'icon' => 'M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z', 'primary' => false],
                 ] as $action)
-                    <a 
-                        href="{{ route($action['route']) }}" 
+                    <a
+                        href="{{ route($action['route']) }}"
                         class="group relative flex items-center gap-3 p-4 rounded-xl {{ $action['primary'] ? 'bg-gradient-to-r from-accent to-accent-2 text-white' : 'bg-white/5 hover:bg-white/10 border border-white/5 hover:border-white/10' }} transition-all duration-300 overflow-hidden"
                     >
                         @if($action['primary'])

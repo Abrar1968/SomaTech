@@ -11,9 +11,9 @@
             <p class="text-text-muted mb-8">Get the latest insights on web development, design trends, and exclusive offers.</p>
             <form class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
                 <div class="relative flex-1">
-                    <input 
-                        type="email" 
-                        placeholder="Enter your email" 
+                    <input
+                        type="email"
+                        placeholder="Enter your email"
                         class="w-full px-6 py-4 bg-[var(--color-bg-primary)] border border-white/10 rounded-2xl text-white placeholder-text-muted focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all"
                     >
                 </div>
@@ -166,8 +166,8 @@
         <div class="container py-8">
             <div class="flex flex-col md:flex-row justify-between items-center gap-4">
                 <p class="text-text-muted text-sm">
-                    &copy; {{ date('Y') }} Somaticx. All rights reserved. Crafted with 
-                    <span class="text-red-500 animate-pulse inline-block">♥</span> 
+                    &copy; {{ date('Y') }} Somaticx. All rights reserved. Crafted with
+                    <span class="text-red-500 animate-pulse inline-block">♥</span>
                     for the web.
                 </p>
                 <div class="flex items-center gap-8 text-sm">

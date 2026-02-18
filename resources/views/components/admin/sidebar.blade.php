@@ -14,7 +14,7 @@
             </div>
         </a>
         {{-- Mobile Close Button --}}
-        <button 
+        <button
             @click="$parent.sidebarOpen = false"
             class="lg:hidden p-2 rounded-lg hover:bg-white/5 transition-colors"
         >
@@ -30,8 +30,8 @@
         <div>
             <h3 class="px-4 mb-3 text-xs font-semibold text-text-muted uppercase tracking-wider">Main</h3>
             <div class="space-y-1">
-                <a 
-                    href="{{ route('admin.dashboard') }}" 
+                <a
+                    href="{{ route('admin.dashboard') }}"
                     class="group flex items-center gap-3 px-4 py-3 rounded-xl {{ request()->routeIs('admin.dashboard') ? 'bg-gradient-to-r from-accent/20 to-transparent text-white border-l-2 border-accent' : 'text-text-muted hover:bg-white/5 hover:text-white' }} transition-all duration-300"
                 >
                     <div class="w-8 h-8 rounded-lg {{ request()->routeIs('admin.dashboard') ? 'bg-accent/20' : 'bg-white/5 group-hover:bg-accent/10' }} flex items-center justify-center transition-colors">
@@ -42,8 +42,8 @@
                     <span class="font-medium">Dashboard</span>
                 </a>
 
-                <a 
-                    href="{{ route('admin.inquiries.index') }}" 
+                <a
+                    href="{{ route('admin.inquiries.index') }}"
                     class="group flex items-center gap-3 px-4 py-3 rounded-xl {{ request()->routeIs('admin.inquiries.*') ? 'bg-gradient-to-r from-accent/20 to-transparent text-white border-l-2 border-accent' : 'text-text-muted hover:bg-white/5 hover:text-white' }} transition-all duration-300"
                 >
                     <div class="w-8 h-8 rounded-lg {{ request()->routeIs('admin.inquiries.*') ? 'bg-accent/20' : 'bg-white/5 group-hover:bg-accent/10' }} flex items-center justify-center transition-colors relative">
@@ -59,13 +59,13 @@
                 </a>
             </div>
         </div>
-        
+
         {{-- Content Section --}}
         <div>
             <h3 class="px-4 mb-3 text-xs font-semibold text-text-muted uppercase tracking-wider">Content</h3>
             <div class="space-y-1">
-                <a 
-                    href="{{ route('admin.projects.index') }}" 
+                <a
+                    href="{{ route('admin.projects.index') }}"
                     class="group flex items-center gap-3 px-4 py-3 rounded-xl {{ request()->routeIs('admin.projects.*') ? 'bg-gradient-to-r from-accent/20 to-transparent text-white border-l-2 border-accent' : 'text-text-muted hover:bg-white/5 hover:text-white' }} transition-all duration-300"
                 >
                     <div class="w-8 h-8 rounded-lg {{ request()->routeIs('admin.projects.*') ? 'bg-accent/20' : 'bg-white/5 group-hover:bg-accent/10' }} flex items-center justify-center transition-colors">
@@ -76,8 +76,8 @@
                     <span class="font-medium">Projects</span>
                 </a>
 
-                <a 
-                    href="{{ route('admin.services.index') }}" 
+                <a
+                    href="{{ route('admin.services.index') }}"
                     class="group flex items-center gap-3 px-4 py-3 rounded-xl {{ request()->routeIs('admin.services.*') ? 'bg-gradient-to-r from-accent/20 to-transparent text-white border-l-2 border-accent' : 'text-text-muted hover:bg-white/5 hover:text-white' }} transition-all duration-300"
                 >
                     <div class="w-8 h-8 rounded-lg {{ request()->routeIs('admin.services.*') ? 'bg-accent/20' : 'bg-white/5 group-hover:bg-accent/10' }} flex items-center justify-center transition-colors">
@@ -88,8 +88,8 @@
                     <span class="font-medium">Services</span>
                 </a>
 
-                <a 
-                    href="{{ route('admin.testimonials.index') }}" 
+                <a
+                    href="{{ route('admin.testimonials.index') }}"
                     class="group flex items-center gap-3 px-4 py-3 rounded-xl {{ request()->routeIs('admin.testimonials.*') ? 'bg-gradient-to-r from-accent/20 to-transparent text-white border-l-2 border-accent' : 'text-text-muted hover:bg-white/5 hover:text-white' }} transition-all duration-300"
                 >
                     <div class="w-8 h-8 rounded-lg {{ request()->routeIs('admin.testimonials.*') ? 'bg-accent/20' : 'bg-white/5 group-hover:bg-accent/10' }} flex items-center justify-center transition-colors">
@@ -101,13 +101,13 @@
                 </a>
             </div>
         </div>
-        
+
         {{-- People Section --}}
         <div>
             <h3 class="px-4 mb-3 text-xs font-semibold text-text-muted uppercase tracking-wider">People</h3>
             <div class="space-y-1">
-                <a 
-                    href="{{ route('admin.team.index') }}" 
+                <a
+                    href="{{ route('admin.team.index') }}"
                     class="group flex items-center gap-3 px-4 py-3 rounded-xl {{ request()->routeIs('admin.team.*') ? 'bg-gradient-to-r from-accent/20 to-transparent text-white border-l-2 border-accent' : 'text-text-muted hover:bg-white/5 hover:text-white' }} transition-all duration-300"
                 >
                     <div class="w-8 h-8 rounded-lg {{ request()->routeIs('admin.team.*') ? 'bg-accent/20' : 'bg-white/5 group-hover:bg-accent/10' }} flex items-center justify-center transition-colors">
@@ -119,13 +119,13 @@
                 </a>
             </div>
         </div>
-        
+
         {{-- Data Section --}}
         <div>
             <h3 class="px-4 mb-3 text-xs font-semibold text-text-muted uppercase tracking-wider">Data</h3>
             <div class="space-y-1">
-                <a 
-                    href="{{ route('admin.skills.index') }}" 
+                <a
+                    href="{{ route('admin.skills.index') }}"
                     class="group flex items-center gap-3 px-4 py-3 rounded-xl {{ request()->routeIs('admin.skills.*') ? 'bg-gradient-to-r from-accent/20 to-transparent text-white border-l-2 border-accent' : 'text-text-muted hover:bg-white/5 hover:text-white' }} transition-all duration-300"
                 >
                     <div class="w-8 h-8 rounded-lg {{ request()->routeIs('admin.skills.*') ? 'bg-accent/20' : 'bg-white/5 group-hover:bg-accent/10' }} flex items-center justify-center transition-colors">
@@ -136,8 +136,8 @@
                     <span class="font-medium">Skills</span>
                 </a>
 
-                <a 
-                    href="{{ route('admin.stats.index') }}" 
+                <a
+                    href="{{ route('admin.stats.index') }}"
                     class="group flex items-center gap-3 px-4 py-3 rounded-xl {{ request()->routeIs('admin.stats.*') ? 'bg-gradient-to-r from-accent/20 to-transparent text-white border-l-2 border-accent' : 'text-text-muted hover:bg-white/5 hover:text-white' }} transition-all duration-300"
                 >
                     <div class="w-8 h-8 rounded-lg {{ request()->routeIs('admin.stats.*') ? 'bg-accent/20' : 'bg-white/5 group-hover:bg-accent/10' }} flex items-center justify-center transition-colors">
@@ -149,13 +149,13 @@
                 </a>
             </div>
         </div>
-        
+
         {{-- System Section --}}
         <div>
             <h3 class="px-4 mb-3 text-xs font-semibold text-text-muted uppercase tracking-wider">System</h3>
             <div class="space-y-1">
-                <a 
-                    href="{{ route('admin.settings.index') }}" 
+                <a
+                    href="{{ route('admin.settings.index') }}"
                     class="group flex items-center gap-3 px-4 py-3 rounded-xl {{ request()->routeIs('admin.settings.*') ? 'bg-gradient-to-r from-accent/20 to-transparent text-white border-l-2 border-accent' : 'text-text-muted hover:bg-white/5 hover:text-white' }} transition-all duration-300"
                 >
                     <div class="w-8 h-8 rounded-lg {{ request()->routeIs('admin.settings.*') ? 'bg-accent/20' : 'bg-white/5 group-hover:bg-accent/10' }} flex items-center justify-center transition-colors">

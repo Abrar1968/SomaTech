@@ -23,7 +23,7 @@
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mt-12">
                 {{-- Content --}}
-                <div 
+                <div
                     x-data="{ visible: false }"
                     x-intersect.once="visible = true"
                     :class="visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'"
@@ -50,7 +50,7 @@
                     <p class="text-lg text-text-muted mb-10 leading-relaxed">
                         {{ $service->short_description ?? 'We provide professional services to help your business succeed in the digital world.' }}
                     </p>
-                    
+
                     <div class="flex flex-wrap gap-4">
                         <a href="{{ route('contact.index') }}?service={{ $service->slug ?? '' }}" class="group relative inline-flex items-center gap-2 px-8 py-4 overflow-hidden rounded-full font-semibold text-white transition-all duration-300">
                             <span class="absolute inset-0 bg-gradient-to-r from-accent to-accent-2"></span>
@@ -70,7 +70,7 @@
                 </div>
 
                 {{-- Featured Image --}}
-                <div 
+                <div
                     class="relative"
                     x-data="{ visible: false }"
                     x-intersect.once="setTimeout(() => visible = true, 200)"
@@ -92,13 +92,13 @@
                                 </svg>
                             </div>
                         @endif
-                        
+
                         {{-- Decorative corner --}}
                         <div class="absolute -bottom-px -right-px w-24 h-24">
                             <div class="absolute inset-0 bg-gradient-to-tl from-accent/20 to-transparent"></div>
                         </div>
                     </div>
-                    
+
                     {{-- Floating stat badges --}}
                     <div class="absolute -bottom-6 -left-6 bg-[var(--color-bg-elevated)] rounded-2xl border border-white/10 p-4 shadow-xl">
                         <div class="flex items-center gap-3">
@@ -124,7 +124,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
                 {{-- Main Content --}}
                 <div class="lg:col-span-2">
-                    <div 
+                    <div
                         x-data="{ visible: false }"
                         x-intersect.once="visible = true"
                         :class="visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'"
@@ -142,7 +142,7 @@
                             <h2 class="text-2xl font-bold font-display mb-8">What's Included</h2>
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 @foreach($service->features as $index => $feature)
-                                    <div 
+                                    <div
                                         class="group flex items-start gap-4 p-5 rounded-2xl bg-[var(--color-bg-elevated)] border border-white/5 hover:border-accent/20 transition-colors"
                                         x-data="{ visible: false }"
                                         x-intersect.once="setTimeout(() => visible = true, {{ $index * 50 }})"
@@ -172,7 +172,7 @@
                                     'Security best practices',
                                     'Post-launch support',
                                 ] as $index => $feature)
-                                    <div 
+                                    <div
                                         class="group flex items-start gap-4 p-5 rounded-2xl bg-[var(--color-bg-elevated)] border border-white/5 hover:border-accent/20 transition-colors"
                                         x-data="{ visible: false }"
                                         x-intersect.once="setTimeout(() => visible = true, {{ $index * 50 }})"
@@ -195,7 +195,7 @@
                 {{-- Sidebar --}}
                 <div class="space-y-8">
                     {{-- Quick Info Box --}}
-                    <div 
+                    <div
                         class="sticky top-32 space-y-8"
                         x-data="{ visible: false }"
                         x-intersect.once="visible = true"
@@ -205,7 +205,7 @@
                         <div class="relative rounded-3xl overflow-hidden bg-[var(--color-bg-elevated)] border border-white/5">
                             {{-- Decorative header --}}
                             <div class="h-2 bg-gradient-to-r from-accent to-accent-2"></div>
-                            
+
                             <div class="p-8">
                                 <h3 class="text-xl font-bold font-display mb-6">Service Details</h3>
                                 <dl class="space-y-6">
@@ -250,7 +250,7 @@
                         <div class="relative rounded-3xl overflow-hidden">
                             <div class="absolute inset-0 bg-gradient-to-br from-accent/20 to-accent-2/20"></div>
                             <div class="absolute inset-0" style="background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0); background-size: 20px 20px;"></div>
-                            
+
                             <div class="relative p-8">
                                 <h3 class="text-xl font-bold font-display mb-3">Ready to Start?</h3>
                                 <p class="text-text-muted mb-6">Let's discuss how this service can transform your business.</p>
@@ -302,7 +302,7 @@
                     ['title' => 'E-Commerce Solutions', 'icon' => 'M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z'],
                     ['title' => 'Website Maintenance', 'icon' => 'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z'],
                 ] as $index => $otherService)
-                    <a 
+                    <a
                         href="{{ route('services.index') }}"
                         class="group flex items-center gap-3 px-6 py-4 rounded-2xl bg-[var(--color-bg-elevated)] border border-white/5 hover:border-accent/30 transition-all duration-300"
                         x-data="{ visible: false }"
@@ -325,7 +325,7 @@
     {{-- CTA Section --}}
     <section class="py-24">
         <div class="container">
-            <div 
+            <div
                 class="relative rounded-[2.5rem] overflow-hidden"
                 x-data="{ visible: false }"
                 x-intersect.once="visible = true"

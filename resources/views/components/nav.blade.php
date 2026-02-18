@@ -15,9 +15,9 @@
             });
         }
     }"
-    :class="{ 
+    :class="{
         'bg-[rgba(13,13,13,0.98)] shadow-2xl shadow-black/50 backdrop-blur-xl': scrolled,
-        'bg-transparent': !scrolled 
+        'bg-transparent': !scrolled
     }"
     class="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
     role="navigation"

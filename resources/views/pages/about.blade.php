@@ -33,7 +33,7 @@
                     <p class="text-xl text-text-muted mb-8 leading-relaxed">
                         A passionate team of developers, designers, and digital strategists dedicated to transforming businesses through innovative technology solutions.
                     </p>
-                    
+
                     {{-- CTAs --}}
                     <div class="flex flex-wrap gap-4">
                         <a href="{{ route('contact.index') }}" class="group relative inline-flex items-center justify-center gap-2 px-8 py-4 overflow-hidden rounded-full font-semibold text-white transition-all duration-300">
@@ -64,10 +64,10 @@
                     <div class="relative aspect-square rounded-3xl overflow-hidden">
                         {{-- Background gradient --}}
                         <div class="absolute inset-0 bg-gradient-to-br from-accent via-accent/90 to-accent-2"></div>
-                        
+
                         {{-- Grid pattern --}}
                         <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.5) 1px, transparent 0); background-size: 24px 24px;"></div>
-                        
+
                         {{-- Content --}}
                         <div class="absolute inset-0 flex flex-col items-center justify-center p-8 text-white text-center">
                             <div class="text-8xl md:text-9xl font-bold font-display mb-4" x-data="{ count: 0 }" x-intersect.once="const target = 5; const duration = 2000; const start = performance.now(); const update = (time) => { const progress = Math.min((time - start) / duration, 1); count = Math.floor(progress * target); if (progress < 1) requestAnimationFrame(update); }; requestAnimationFrame(update);">
@@ -126,7 +126,7 @@
                     ['icon' => 'M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z', 'title' => 'Collaboration', 'description' => 'We work closely with our clients as partners, not just service providers.', 'color' => 'accent'],
                     ['icon' => 'M13 10V3L4 14h7v7l9-11h-7z', 'title' => 'Results', 'description' => 'We focus on delivering measurable outcomes that drive real business growth.', 'color' => 'accent-2'],
                 ] as $index => $value)
-                    <div 
+                    <div
                         class="value-card group relative text-center p-8 rounded-3xl bg-[var(--color-bg-primary)] border border-white/5 hover:border-{{ $value['color'] }}/30 transition-all duration-500"
                         x-data="{ visible: false }"
                         x-intersect.once="setTimeout(() => visible = true, {{ $index * 100 }})"
@@ -135,7 +135,7 @@
                     >
                         {{-- Glow --}}
                         <div class="absolute inset-0 rounded-3xl bg-gradient-to-br from-{{ $value['color'] }}/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        
+
                         {{-- Icon --}}
                         <div class="relative w-16 h-16 mx-auto mb-6">
                             <div class="absolute inset-0 bg-gradient-to-br from-accent to-accent-2 rounded-2xl rotate-6 group-hover:rotate-12 transition-transform duration-500"></div>
@@ -145,7 +145,7 @@
                                 </svg>
                             </div>
                         </div>
-                        
+
                         <h3 class="relative text-xl font-bold font-display mb-3 group-hover:text-accent transition-colors">{{ $value['title'] }}</h3>
                         <p class="relative text-text-muted leading-relaxed">{{ $value['description'] }}</p>
                     </div>
@@ -173,7 +173,7 @@
                         ['name' => 'Sam Wilson', 'role' => 'Mobile Developer', 'skills' => ['Flutter', 'Swift', 'Kotlin'], 'bio' => 'Sam specializes in cross-platform mobile development, creating seamless experiences across iOS and Android.'],
                         ['name' => 'Taylor Reed', 'role' => 'Project Manager', 'skills' => ['Agile', 'Scrum', 'Strategy'], 'bio' => 'Taylor ensures our projects run smoothly, keeping teams aligned and clients informed every step of the way.'],
                     ] as $index => $placeholder)
-                        <div 
+                        <div
                             class="team-card-container perspective-1000 group"
                             x-data="{ flipped: false, visible: false }"
                             x-intersect.once="setTimeout(() => visible = true, {{ $index * 100 }})"
@@ -181,7 +181,7 @@
                             style="transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);"
                             @click="flipped = !flipped"
                         >
-                            <div 
+                            <div
                                 class="team-card relative w-full aspect-[3/4] transition-transform duration-700 preserve-3d cursor-pointer"
                                 :class="flipped && 'rotate-y-180'"
                             >
@@ -210,7 +210,7 @@
                                     </div>
                                     <div class="absolute inset-2 rounded-2xl border border-accent/0 group-hover:border-accent/30 transition-all duration-500"></div>
                                 </div>
-                                
+
                                 {{-- Back --}}
                                 <div class="team-card-back absolute inset-0 backface-hidden rotate-y-180 rounded-3xl overflow-hidden">
                                     <div class="absolute inset-0 bg-gradient-to-br from-accent via-accent/90 to-accent-2"></div>
@@ -258,7 +258,7 @@
                     ['step' => '03', 'title' => 'Execution', 'description' => 'Our team brings the vision to life with agile development practices.'],
                     ['step' => '04', 'title' => 'Launch & Support', 'description' => 'We deploy your solution and provide ongoing support for success.'],
                 ] as $index => $step)
-                    <div 
+                    <div
                         class="relative"
                         x-data="{ visible: false }"
                         x-intersect.once="setTimeout(() => visible = true, {{ $index * 150 }})"
@@ -269,7 +269,7 @@
                         @if($index < 3)
                             <div class="hidden lg:block absolute top-10 left-1/2 w-full h-px bg-gradient-to-r from-accent/50 to-transparent"></div>
                         @endif
-                        
+
                         <div class="relative text-center p-6">
                             <div class="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-accent/20 to-accent-2/20 flex items-center justify-center border border-white/10">
                                 <span class="text-3xl font-bold gradient-text">{{ $step['step'] }}</span>
@@ -286,7 +286,7 @@
     {{-- CTA Section --}}
     <section class="py-24">
         <div class="container">
-            <div 
+            <div
                 class="relative rounded-[2.5rem] overflow-hidden"
                 x-data="{ visible: false }"
                 x-intersect.once="visible = true"

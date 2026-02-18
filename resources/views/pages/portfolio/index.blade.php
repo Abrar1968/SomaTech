@@ -25,7 +25,7 @@
                 x-intersect.once="visible = true"
                 :class="visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'"
                 style="transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);">
-                
+
                 {{-- Badge --}}
                 <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8">
                     <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
@@ -48,7 +48,7 @@
                     ['value' => '5+', 'label' => 'Years Experience'],
                     ['value' => '99%', 'label' => 'Client Satisfaction'],
                 ] as $index => $stat)
-                    <div 
+                    <div
                         class="text-center p-6 rounded-2xl bg-white/5 border border-white/5"
                         x-data="{ visible: false }"
                         x-intersect.once="setTimeout(() => visible = true, {{ $index * 100 }})"
@@ -69,8 +69,8 @@
             <div class="flex flex-wrap gap-3 justify-center">
                 <button
                     @click="activeFilter = 'all'"
-                    :class="activeFilter === 'all' 
-                        ? 'bg-gradient-to-r from-accent to-accent-2 text-white shadow-lg shadow-accent/25' 
+                    :class="activeFilter === 'all'
+                        ? 'bg-gradient-to-r from-accent to-accent-2 text-white shadow-lg shadow-accent/25'
                         : 'bg-white/5 text-text-muted hover:text-white hover:bg-white/10 border border-white/10'"
                     class="px-6 py-3 rounded-full font-semibold transition-all duration-300"
                 >
@@ -79,8 +79,8 @@
                 @foreach($categories ?? [] as $category)
                     <button
                         @click="activeFilter = '{{ $category->slug }}'"
-                        :class="activeFilter === '{{ $category->slug }}' 
-                            ? 'bg-gradient-to-r from-accent to-accent-2 text-white shadow-lg shadow-accent/25' 
+                        :class="activeFilter === '{{ $category->slug }}'
+                            ? 'bg-gradient-to-r from-accent to-accent-2 text-white shadow-lg shadow-accent/25'
                             : 'bg-white/5 text-text-muted hover:text-white hover:bg-white/10 border border-white/10'"
                         class="px-6 py-3 rounded-full font-semibold transition-all duration-300"
                     >
@@ -91,8 +91,8 @@
                     @foreach(['Web Apps', 'Mobile Apps', 'E-Commerce', 'Corporate'] as $cat)
                         <button
                             @click="activeFilter = '{{ Str::slug($cat) }}'"
-                            :class="activeFilter === '{{ Str::slug($cat) }}' 
-                                ? 'bg-gradient-to-r from-accent to-accent-2 text-white shadow-lg shadow-accent/25' 
+                            :class="activeFilter === '{{ Str::slug($cat) }}'
+                                ? 'bg-gradient-to-r from-accent to-accent-2 text-white shadow-lg shadow-accent/25'
                                 : 'bg-white/5 text-text-muted hover:text-white hover:bg-white/10 border border-white/10'"
                             class="px-6 py-3 rounded-full font-semibold transition-all duration-300"
                         >
@@ -113,7 +113,7 @@
                 @empty
                     {{-- Placeholder projects --}}
                     @for($i = 0; $i < 9; $i++)
-                        <article 
+                        <article
                             class="group relative overflow-hidden rounded-3xl bg-[var(--color-bg-elevated)] border border-white/5 hover:border-accent/30 transition-all duration-500"
                             x-data="{ visible: false, hover: false }"
                             x-intersect.once="setTimeout(() => visible = true, {{ $i * 80 }})"
@@ -128,12 +128,12 @@
                                     <div class="absolute inset-0 opacity-30" style="background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0); background-size: 24px 24px;"></div>
                                     <span class="text-7xl font-bold text-white/10 font-display">{{ str_pad($i + 1, 2, '0', STR_PAD_LEFT) }}</span>
                                 </div>
-                                
+
                                 {{-- Gradient overlay --}}
                                 <div class="absolute inset-0 bg-gradient-to-t from-[var(--color-bg-primary)] via-transparent to-transparent opacity-80"></div>
-                                
+
                                 {{-- Hover overlay --}}
-                                <div 
+                                <div
                                     class="absolute inset-0 bg-accent/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                                 >
                                     <div class="flex gap-3">
@@ -162,7 +162,7 @@
                                 <p class="text-text-muted text-sm mb-4 line-clamp-2 leading-relaxed">
                                     A showcase of our development capabilities, attention to detail, and commitment to quality.
                                 </p>
-                                
+
                                 {{-- Tech Stack --}}
                                 <div class="flex flex-wrap gap-2">
                                     @foreach(['Laravel', 'Vue.js', 'Tailwind'] as $tech)
@@ -193,13 +193,13 @@
                 subtitle="A deep dive into one of our most successful projects"
             />
 
-            <div 
+            <div
                 class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
                 x-data="{ visible: false }"
                 x-intersect.once="visible = true"
             >
                 {{-- Image --}}
-                <div 
+                <div
                     class="relative"
                     :class="visible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'"
                     style="transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);"
@@ -212,7 +212,7 @@
                             </svg>
                         </div>
                     </div>
-                    
+
                     {{-- Stats badge --}}
                     <div class="absolute -bottom-6 -right-6 bg-[var(--color-bg-elevated)] rounded-2xl border border-white/10 p-5 shadow-xl">
                         <div class="text-3xl font-bold gradient-text">+150%</div>
@@ -228,7 +228,7 @@
                     <span class="text-accent text-sm font-semibold tracking-wider uppercase">E-Commerce Platform</span>
                     <h3 class="text-3xl md:text-4xl font-bold font-display mt-3 mb-6">Online Marketplace Redesign</h3>
                     <p class="text-text-muted text-lg leading-relaxed mb-8">
-                        We transformed a struggling e-commerce platform into a thriving marketplace with modern design, 
+                        We transformed a struggling e-commerce platform into a thriving marketplace with modern design,
                         improved UX, and optimized performance. The result was a 150% increase in traffic and 3x conversion rate improvement.
                     </p>
 
@@ -265,7 +265,7 @@
     {{-- CTA Section --}}
     <section class="py-24">
         <div class="container">
-            <div 
+            <div
                 class="relative rounded-[2.5rem] overflow-hidden"
                 x-data="{ visible: false }"
                 x-intersect.once="visible = true"

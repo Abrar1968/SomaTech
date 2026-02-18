@@ -1,6 +1,6 @@
 @props(['title', 'subtitle', 'ctas' => []])
 
-<section 
+<section
     class="relative min-h-screen flex items-center justify-center overflow-hidden"
     x-data="{ loaded: false }"
     x-init="setTimeout(() => loaded = true, 100)"
@@ -24,7 +24,7 @@
     {{-- Floating particles --}}
     <div class="absolute inset-0 z-[4] pointer-events-none overflow-hidden">
         @for($i = 0; $i < 20; $i++)
-            <div 
+            <div
                 class="absolute w-1 h-1 bg-accent/50 rounded-full animate-float"
                 style="
                     left: {{ rand(0, 100) }}%;
@@ -40,7 +40,7 @@
     <div class="container relative z-10 pt-32 pb-20">
         <div class="max-w-5xl mx-auto text-center">
             {{-- Badge --}}
-            <div 
+            <div
                 class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm mb-8 transition-all duration-700"
                 :class="loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'"
             >
@@ -122,7 +122,7 @@
     </div>
 
     {{-- Scroll Indicator --}}
-    <div 
+    <div
         class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center cursor-pointer group"
         onclick="window.scrollTo({top: window.innerHeight, behavior: 'smooth'})"
     >

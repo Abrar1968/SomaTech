@@ -7,7 +7,7 @@
     @mouseleave="hovered = false"
 >
     {{-- Glow effect on hover --}}
-    <div 
+    <div
         class="absolute -inset-px rounded-2xl bg-gradient-to-r from-accent/20 to-accent-2/20 opacity-0 blur-sm transition-opacity duration-500 -z-10"
         :class="hovered && 'opacity-100'"
     ></div>
@@ -24,10 +24,10 @@
             class="w-full h-full object-cover transition-transform duration-700 ease-out"
             :class="hovered && 'scale-110'"
         />
-        
+
         {{-- Gradient overlay --}}
         <div class="absolute inset-0 bg-gradient-to-t from-[var(--color-bg-primary)] via-transparent to-transparent"></div>
-        
+
         {{-- Top gradient for badge visibility --}}
         <div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/50 to-transparent"></div>
 
@@ -54,7 +54,7 @@
         @endif
 
         {{-- Hover overlay with action --}}
-        <div 
+        <div
             class="absolute inset-0 flex items-center justify-center bg-gradient-to-t from-accent/90 via-accent/70 to-transparent transition-all duration-500"
             :class="hovered ? 'opacity-100' : 'opacity-0'"
         >
@@ -114,8 +114,8 @@
                     {{ $project->completed_at->format('M Y') }}
                 </span>
             @endif
-            
-            <a 
+
+            <a
                 href="{{ route('portfolio.show', $project->slug) }}"
                 class="inline-flex items-center gap-1.5 text-xs font-medium text-accent hover:text-accent-2 transition-colors group/link"
             >

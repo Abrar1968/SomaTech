@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    
+
     <style>
         @keyframes float {
             0%, 100% { transform: translateY(0) rotate(0deg); }
@@ -34,10 +34,10 @@
             <div class="absolute bottom-1/4 right-1/4 w-[300px] h-[300px] bg-accent-2/20 rounded-full blur-3xl float-animation-delay"></div>
             <div class="absolute inset-0 opacity-30" style="background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.03) 1px, transparent 0); background-size: 40px 40px;"></div>
         </div>
-        
+
         {{-- Content --}}
         <div class="relative z-10 flex flex-col justify-center items-center w-full p-16">
-            <div 
+            <div
                 class="max-w-md text-center"
                 :class="loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'"
                 style="transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;"
@@ -52,12 +52,12 @@
                     </div>
                     <span class="text-3xl font-bold font-display">Somaticx</span>
                 </div>
-                
+
                 <h2 class="text-3xl font-bold font-display mb-4">Welcome to the Admin Portal</h2>
                 <p class="text-text-muted text-lg leading-relaxed mb-12">
                     Manage your portfolio, services, and client inquiries all in one place.
                 </p>
-                
+
                 {{-- Features --}}
                 <div class="space-y-4 text-left">
                     @foreach([
@@ -78,7 +78,7 @@
             </div>
         </div>
     </div>
-    
+
     {{-- Right Side - Login Form --}}
     <div class="w-full lg:w-1/2 flex items-center justify-center p-6 lg:p-16 relative">
         {{-- Background elements (mobile only) --}}
@@ -86,8 +86,8 @@
             <div class="absolute top-20 left-0 w-[300px] h-[300px] bg-accent/10 rounded-full blur-3xl"></div>
             <div class="absolute bottom-0 right-0 w-[200px] h-[200px] bg-accent-2/10 rounded-full blur-3xl"></div>
         </div>
-        
-        <div 
+
+        <div
             class="w-full max-w-md relative z-10"
             :class="loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'"
             style="transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s;"
@@ -101,7 +101,7 @@
                     <span class="text-2xl font-bold font-display">Somaticx</span>
                 </a>
             </div>
-            
+
             {{-- Header --}}
             <div class="text-center lg:text-left mb-8">
                 <h1 class="text-3xl font-bold font-display mb-2">Admin Login</h1>
@@ -112,7 +112,7 @@
             <form method="POST" action="{{ route('login.store') }}" class="relative rounded-3xl overflow-hidden bg-[var(--color-bg-elevated)] border border-white/5">
                 {{-- Decorative header --}}
                 <div class="h-1.5 bg-gradient-to-r from-accent to-accent-2"></div>
-                
+
                 <div class="p-8">
                     @csrf
 
@@ -165,8 +165,8 @@
                                 placeholder="Enter your password"
                                 required
                             />
-                            <button 
-                                type="button" 
+                            <button
+                                type="button"
                                 @click="show = !show"
                                 class="absolute right-4 top-1/2 -translate-y-1/2 text-text-muted hover:text-white transition-colors"
                             >

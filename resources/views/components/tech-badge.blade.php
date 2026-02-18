@@ -2,7 +2,7 @@
 
 @php
     $baseClasses = 'inline-flex items-center gap-1.5 font-medium transition-all duration-300';
-    
+
     $sizeClasses = match($size) {
         'xs' => 'px-2 py-0.5 text-[10px] rounded',
         'sm' => 'px-3 py-1 text-xs rounded-md',
@@ -10,7 +10,7 @@
         'lg' => 'px-5 py-2 text-base rounded-xl',
         default => 'px-3 py-1 text-xs rounded-md',
     };
-    
+
     $variantClasses = match($variant) {
         'primary' => 'bg-accent/20 text-accent border border-accent/20 hover:bg-accent/30 hover:border-accent/40',
         'secondary' => 'bg-accent-2/20 text-accent-2 border border-accent-2/20 hover:bg-accent-2/30 hover:border-accent-2/40',

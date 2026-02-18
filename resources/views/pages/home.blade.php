@@ -19,7 +19,7 @@
         {{-- Fade edges --}}
         <div class="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[var(--color-bg-primary)] to-transparent z-10"></div>
         <div class="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[var(--color-bg-primary)] to-transparent z-10"></div>
-        
+
         <div class="flex animate-marquee whitespace-nowrap">
             @php
                 $technologies = [
@@ -56,7 +56,7 @@
     <section class="relative py-32 overflow-hidden">
         {{-- Background decoration --}}
         <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-accent/5 rounded-full blur-3xl pointer-events-none"></div>
-        
+
         <div class="container relative">
             <x-section-heading
                 badge="What We Do"
@@ -73,7 +73,7 @@
                         ['title' => 'App Development', 'tagline' => 'Mobile-first approach', 'description' => 'Native and cross-platform mobile apps that deliver exceptional user experiences.', 'icon' => 'mobile'],
                         ['title' => 'Website Maintenance', 'tagline' => 'Keep it running smoothly', 'description' => 'Ongoing support, updates, and optimization to keep your digital presence at its best.', 'icon' => 'settings'],
                     ] as $index => $placeholder)
-                        <div 
+                        <div
                             class="service-card group relative p-8 rounded-3xl bg-gradient-to-b from-white/5 to-transparent border border-white/5 hover:border-accent/30 transition-all duration-500"
                             x-data="{ visible: false }"
                             x-intersect.once="setTimeout(() => visible = true, {{ $index * 100 }})"
@@ -82,7 +82,7 @@
                         >
                             {{-- Glow effect on hover --}}
                             <div class="absolute inset-0 rounded-3xl bg-gradient-to-r from-accent/10 to-accent-2/10 opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500 -z-10"></div>
-                            
+
                             {{-- Icon --}}
                             <div class="relative w-16 h-16 mb-8">
                                 <div class="absolute inset-0 bg-gradient-to-br from-accent to-accent-2 rounded-2xl rotate-6 group-hover:rotate-12 transition-transform duration-500"></div>
@@ -108,7 +108,7 @@
                             <h3 class="text-2xl font-bold font-display mb-2 group-hover:text-accent transition-colors">{{ $placeholder['title'] }}</h3>
                             <p class="text-accent/70 text-sm font-medium mb-4">{{ $placeholder['tagline'] }}</p>
                             <p class="text-text-muted mb-8 leading-relaxed">{{ $placeholder['description'] }}</p>
-                            
+
                             {{-- Link --}}
                             <a href="{{ route('services.index') }}" class="inline-flex items-center gap-2 text-white font-medium group/link">
                                 <span class="relative">
@@ -150,7 +150,7 @@
                     <x-project-card :project="$project" />
                 @empty
                     @for($i = 0; $i < 6; $i++)
-                        <div 
+                        <div
                             class="project-card group relative rounded-2xl overflow-hidden bg-[var(--color-bg-elevated)] border border-white/5"
                             x-data="{ visible: false }"
                             x-intersect.once="setTimeout(() => visible = true, {{ $i * 100 }})"
@@ -208,7 +208,7 @@
                         ['value' => 5, 'label' => 'Years Experience', 'suffix' => '+', 'icon' => 'calendar'],
                         ['value' => 99, 'label' => 'Uptime Guarantee', 'suffix' => '%', 'icon' => 'chart'],
                     ] as $index => $placeholder)
-                        <div 
+                        <div
                             class="relative text-center p-8 rounded-3xl bg-gradient-to-b from-white/5 to-transparent border border-white/5"
                             x-data="{ count: 0, visible: false }"
                             x-intersect.once="
@@ -262,7 +262,7 @@
     <section class="py-32 bg-[var(--color-bg-surface)] relative overflow-hidden">
         {{-- Background decoration --}}
         <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
-        
+
         <div class="container">
             <x-section-heading
                 badge="Testimonials"
@@ -279,7 +279,7 @@
                         ['name' => 'Sarah Johnson', 'company' => 'StartupXYZ', 'role' => 'Founder', 'content' => 'Working with Somaticx was a pleasure from start to finish. They understood our vision and brought it to life perfectly.', 'rating' => 5],
                         ['name' => 'Michael Chen', 'company' => 'InnovateCo', 'role' => 'CTO', 'content' => 'The mobile app Somaticx built for us has been a game-changer. Professional team, excellent communication, and outstanding results.', 'rating' => 5],
                     ] as $index => $placeholder)
-                        <div 
+                        <div
                             class="testimonial-card relative p-8 rounded-3xl bg-[var(--color-bg-primary)] border border-white/5 hover:border-accent/20 transition-all duration-500"
                             x-data="{ visible: false }"
                             x-intersect.once="setTimeout(() => visible = true, {{ $index * 100 }})"
@@ -328,7 +328,7 @@
     {{-- CTA Section --}}
     <section class="py-32">
         <div class="container">
-            <div 
+            <div
                 class="relative rounded-[2.5rem] overflow-hidden"
                 x-data="{ visible: false }"
                 x-intersect.once="visible = true"
@@ -338,7 +338,7 @@
                 {{-- Background layers --}}
                 <div class="absolute inset-0 bg-gradient-to-r from-accent/20 to-accent-2/20"></div>
                 <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%239C92AC\" fill-opacity=\"0.05\"%3E%3Cpath d=\"M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-50"></div>
-                
+
                 {{-- Animated gradient orbs --}}
                 <div class="absolute -top-24 -left-24 w-64 h-64 bg-accent/30 rounded-full blur-3xl animate-pulse"></div>
                 <div class="absolute -bottom-24 -right-24 w-64 h-64 bg-accent-2/30 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>

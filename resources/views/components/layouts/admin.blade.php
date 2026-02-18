@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 
     @vite(['resources/css/app.css', 'resources/js/admin.js'])
-    
+
     <style>
         .sidebar-transition { transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease; }
         .content-transition { transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
@@ -22,8 +22,8 @@
 </head>
 <body class="bg-[var(--color-bg-primary)] text-white antialiased" x-data="{ sidebarOpen: window.innerWidth >= 1024, loaded: false }" x-init="setTimeout(() => loaded = true, 100)">
     {{-- Mobile Overlay --}}
-    <div 
-        x-show="sidebarOpen" 
+    <div
+        x-show="sidebarOpen"
         x-transition:enter="transition-opacity ease-out duration-300"
         x-transition:enter-start="opacity-0"
         x-transition:enter-end="opacity-100"
@@ -37,7 +37,7 @@
 
     <div class="flex h-screen overflow-hidden">
         {{-- Sidebar --}}
-        <aside 
+        <aside
             class="fixed lg:static inset-y-0 left-0 z-50 w-72 bg-[var(--color-bg-surface)] border-r border-white/5 flex-shrink-0 sidebar-transition"
             :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'"
         >
@@ -50,7 +50,7 @@
             <header class="h-16 bg-[var(--color-bg-surface)]/80 backdrop-blur-xl border-b border-white/5 flex items-center justify-between px-4 lg:px-6 flex-shrink-0 sticky top-0 z-30">
                 <div class="flex items-center gap-4">
                     {{-- Mobile Menu Toggle --}}
-                    <button 
+                    <button
                         @click="sidebarOpen = !sidebarOpen"
                         class="lg:hidden p-2 rounded-xl hover:bg-white/5 transition-colors"
                     >
@@ -59,7 +59,7 @@
                             <path x-show="sidebarOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" x-cloak></path>
                         </svg>
                     </button>
-                    
+
                     {{-- Page Title & Breadcrumb --}}
                     <div>
                         <h1 class="text-lg lg:text-xl font-semibold font-display">{{ $title ?? 'Dashboard' }}</h1>
@@ -74,7 +74,7 @@
                         @endif
                     </div>
                 </div>
-                
+
                 <div class="flex items-center gap-2 lg:gap-4">
                     {{-- Search (Desktop) --}}
                     <div class="hidden md:block relative" x-data="{ searchFocused: false }">
@@ -83,15 +83,15 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                             </svg>
                         </div>
-                        <input 
-                            type="text" 
-                            placeholder="Search..." 
+                        <input
+                            type="text"
+                            placeholder="Search..."
                             class="w-48 lg:w-64 pl-10 pr-4 py-2 bg-white/5 border border-white/10 rounded-xl text-sm focus:outline-none focus:border-accent focus:bg-white/10 transition-all duration-300"
                             @focus="searchFocused = true"
                             @blur="searchFocused = false"
                         >
                     </div>
-                    
+
                     {{-- Notifications --}}
                     <button class="relative p-2.5 rounded-xl hover:bg-white/5 transition-colors group">
                         <svg class="w-5 h-5 text-text-muted group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -99,10 +99,10 @@
                         </svg>
                         <span class="absolute top-1.5 right-1.5 w-2 h-2 bg-accent rounded-full ring-2 ring-[var(--color-bg-surface)]"></span>
                     </button>
-                    
+
                     {{-- View Site --}}
-                    <a 
-                        href="{{ route('home') }}" 
+                    <a
+                        href="{{ route('home') }}"
                         target="_blank"
                         class="hidden sm:flex items-center gap-2 px-3 py-2 text-sm rounded-xl bg-white/5 hover:bg-white/10 transition-colors group"
                     >
@@ -111,23 +111,23 @@
                         </svg>
                         <span class="text-text-muted group-hover:text-white transition-colors">View Site</span>
                     </a>
-                    
+
                     {{-- User Menu --}}
                     <x-admin.user-menu />
                 </div>
             </header>
 
             {{-- Content Area --}}
-            <main 
+            <main
                 class="flex-1 overflow-y-auto p-4 lg:p-6"
                 :class="loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'"
                 style="transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;"
             >
                 {{-- Flash Messages --}}
                 @if(session('success'))
-                    <div 
-                        x-data="{ show: true }" 
-                        x-show="show" 
+                    <div
+                        x-data="{ show: true }"
+                        x-show="show"
                         x-init="setTimeout(() => show = false, 5000)"
                         x-transition:enter="transition ease-out duration-300"
                         x-transition:enter-start="opacity-0 translate-y-2"
@@ -152,10 +152,10 @@
                         </button>
                     </div>
                 @endif
-                
+
                 @if(session('error'))
-                    <div 
-                        x-data="{ show: true }" 
+                    <div
+                        x-data="{ show: true }"
                         x-show="show"
                         x-transition
                         class="mb-6 p-4 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-between"
@@ -178,7 +178,7 @@
 
                 {{ $slot }}
             </main>
-            
+
             {{-- Footer --}}
             <footer class="px-4 lg:px-6 py-4 border-t border-white/5 text-center text-sm text-text-muted">
                 &copy; {{ date('Y') }} Somaticx. Admin Panel v1.0

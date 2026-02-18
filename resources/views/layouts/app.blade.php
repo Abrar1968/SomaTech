@@ -46,7 +46,7 @@
     <x-custom-cursor />
 
     {{-- Page Transition Overlay --}}
-    <div id="page-transition" 
+    <div id="page-transition"
          class="fixed inset-0 bg-gradient-to-br from-[var(--color-bg-primary)] via-[var(--color-bg-surface)] to-[var(--color-bg-primary)] z-[60] pointer-events-none"
          x-data="{ show: false }"
          x-show="show"
@@ -66,7 +66,7 @@
     <x-nav />
 
     {{-- Main Content with smooth reveal --}}
-    <main id="main-content" 
+    <main id="main-content"
           class="min-h-screen"
           :class="loaded ? 'opacity-100' : 'opacity-0'"
           style="transition: opacity 0.3s ease-out;">

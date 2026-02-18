@@ -24,7 +24,7 @@
     {{-- Star Rating - SRS FR-007 --}}
     <div class="flex gap-1 mb-6">
         @for($i = 1; $i <= 5; $i++)
-            <svg 
+            <svg
                 class="w-5 h-5 transition-transform duration-300 {{ $i <= $testimonial->rating ? 'text-yellow-400 fill-yellow-400' : 'text-white/10' }}"
                 style="transition-delay: {{ ($i - 1) * 50 }}ms;"
                 :class="visible && '{{ $i <= $testimonial->rating ? 'scale-100' : 'scale-75' }}'"

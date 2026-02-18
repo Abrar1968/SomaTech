@@ -19,7 +19,7 @@
                 x-intersect.once="visible = true"
                 :class="visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'"
                 style="transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);">
-                
+
                 {{-- Badge --}}
                 <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8">
                     <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
@@ -41,7 +41,7 @@
         <div class="container">
             <div class="grid grid-cols-1 lg:grid-cols-5 gap-16">
                 {{-- Contact Info --}}
-                <div 
+                <div
                     class="lg:col-span-2"
                     x-data="{ visible: false }"
                     x-intersect.once="visible = true"
@@ -56,7 +56,7 @@
                             ['icon' => 'M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z', 'title' => 'Call Us', 'content' => '+1-555-SOMATICX', 'link' => null],
                             ['icon' => 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z', 'title' => 'Location', 'content' => 'Remote-first, Serving Clients Worldwide', 'link' => null],
                         ] as $index => $contact)
-                            <div 
+                            <div
                                 class="group flex items-start gap-4 p-5 rounded-2xl bg-[var(--color-bg-elevated)] border border-white/5 hover:border-accent/20 transition-all duration-300"
                                 x-data="{ show: false }"
                                 x-intersect.once="setTimeout(() => show = true, {{ $index * 100 }})"
@@ -92,8 +92,8 @@
                                 ['name' => 'X', 'icon' => 'M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z'],
                                 ['name' => 'Instagram', 'icon' => 'M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z'],
                             ] as $index => $social)
-                                <a 
-                                    href="#" 
+                                <a
+                                    href="#"
                                     class="group w-12 h-12 rounded-xl bg-[var(--color-bg-elevated)] border border-white/10 flex items-center justify-center text-text-muted hover:text-accent hover:border-accent/30 hover:bg-accent/10 transition-all duration-300"
                                     aria-label="{{ $social['name'] }}"
                                 >
@@ -122,7 +122,7 @@
                 </div>
 
                 {{-- Contact Form --}}
-                <div 
+                <div
                     class="lg:col-span-3"
                     x-data="{ visible: false }"
                     x-intersect.once="setTimeout(() => visible = true, 200)"
@@ -132,11 +132,11 @@
                     <div class="relative rounded-3xl overflow-hidden bg-[var(--color-bg-elevated)] border border-white/5">
                         {{-- Decorative header --}}
                         <div class="h-2 bg-gradient-to-r from-accent to-accent-2"></div>
-                        
+
                         <div class="p-8 md:p-12">
                             <h2 class="text-2xl font-bold font-display mb-2">Send Us a Message</h2>
                             <p class="text-text-muted mb-8">Fill out the form and we'll get back to you shortly.</p>
-                            
+
                             <x-contact-form :services="$services ?? collect()" />
                         </div>
                     </div>
@@ -162,14 +162,14 @@
                     ['question' => 'What is your pricing model?', 'answer' => 'We offer both fixed-price quotes for well-defined projects and hourly rates for ongoing work. After understanding your requirements, we\'ll recommend the best approach for your budget.'],
                     ['question' => 'Can you work with our existing team?', 'answer' => 'Absolutely! We often collaborate with in-house teams, providing additional expertise and resources. We integrate seamlessly with your existing workflows and communication tools.'],
                 ] as $index => $faq)
-                    <div 
+                    <div
                         class="group"
                         x-data="{ open: false, visible: false }"
                         x-intersect.once="setTimeout(() => visible = true, {{ $index * 100 }})"
                         :class="visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'"
                         style="transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);"
                     >
-                        <button 
+                        <button
                             @click="open = !open"
                             class="w-full flex items-center justify-between gap-4 p-6 rounded-2xl bg-[var(--color-bg-elevated)] border border-white/5 hover:border-accent/20 transition-colors text-left"
                             :class="open ? 'border-accent/30' : ''"
@@ -181,7 +181,7 @@
                                 </svg>
                             </span>
                         </button>
-                        <div 
+                        <div
                             x-show="open"
                             x-collapse
                             class="px-6 pb-6"
@@ -197,7 +197,7 @@
     {{-- Map or Availability Section --}}
     <section class="py-24">
         <div class="container">
-            <div 
+            <div
                 class="relative rounded-[2.5rem] overflow-hidden"
                 x-data="{ visible: false }"
                 x-intersect.once="visible = true"

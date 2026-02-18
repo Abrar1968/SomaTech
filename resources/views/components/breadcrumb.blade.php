@@ -17,8 +17,8 @@
 @endphp
 
 @if(count($crumbs) > 0)
-<nav 
-    aria-label="Breadcrumb" 
+<nav
+    aria-label="Breadcrumb"
     class="mb-8"
     x-data="{ visible: false }"
     x-intersect.once="visible = true"
@@ -40,20 +40,20 @@
             @if(strtolower($crumb['label']) === 'home')
                 @continue
             @endif
-            
+
             <li class="flex items-center">
                 {{-- Separator --}}
                 <svg class="w-4 h-4 text-white/20 mx-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                 </svg>
-                
+
                 @if($loop->last)
                     <span class="px-3 py-1.5 rounded-lg bg-white/5 text-white font-medium border border-white/10" aria-current="page">
                         {{ $crumb['label'] }}
                     </span>
                 @else
-                    <a 
-                        href="{{ $crumb['url'] }}" 
+                    <a
+                        href="{{ $crumb['url'] }}"
                         class="group relative px-3 py-1.5 rounded-lg text-text-muted hover:text-white transition-colors duration-300"
                     >
                         <span class="relative z-10">{{ $crumb['label'] }}</span>

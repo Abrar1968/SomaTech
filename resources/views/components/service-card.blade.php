@@ -10,7 +10,7 @@
     style="transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);"
 >
     {{-- Glow effect on hover --}}
-    <div 
+    <div
         class="absolute inset-0 rounded-3xl bg-gradient-to-br from-accent/10 via-transparent to-accent-2/10 opacity-0 blur-xl transition-opacity duration-500 -z-10"
         :class="hovered && 'opacity-100'"
     ></div>

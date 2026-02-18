@@ -1,7 +1,7 @@
 @props(['images' => [], 'columns' => 3])
 
 @if(count($images) > 0)
-<div 
+<div
     class="grid grid-cols-2 md:grid-cols-{{ $columns }} gap-4"
     x-data="{ lightbox: null, activeImage: 0 }"
 >
@@ -22,10 +22,10 @@
                 loading="lazy"
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
             />
-            
+
             {{-- Gradient overlay --}}
             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            
+
             {{-- Hover content --}}
             <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
                 <span class="flex items-center justify-center w-16 h-16 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 transform scale-50 group-hover:scale-100 transition-transform duration-500">
@@ -34,12 +34,12 @@
                     </svg>
                 </span>
             </div>
-            
+
             {{-- Image number indicator --}}
             <div class="absolute bottom-4 right-4 px-3 py-1 rounded-lg bg-black/50 backdrop-blur-sm text-white text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform translate-y-2 group-hover:translate-y-0">
                 {{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}/{{ str_pad(count($images), 2, '0', STR_PAD_LEFT) }}
             </div>
-            
+
             {{-- Corner accent --}}
             <div class="absolute -top-12 -right-12 w-24 h-24 bg-accent/30 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
         </a>

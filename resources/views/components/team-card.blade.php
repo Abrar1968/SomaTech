@@ -7,7 +7,7 @@
         ->implode('');
 @endphp
 
-<div 
+<div
     class="team-card-container perspective-1000 group"
     x-data="{ flipped: false, visible: false }"
     x-intersect.once="setTimeout(() => visible = true, {{ $index * 100 }})"
@@ -15,7 +15,7 @@
     style="transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);"
     @click="flipped = !flipped"
 >
-    <div 
+    <div
         class="team-card relative w-full aspect-[3/4] transition-transform duration-700 preserve-3d cursor-pointer"
         :class="flipped && 'rotate-y-180'"
     >
@@ -47,7 +47,7 @@
             <div class="absolute bottom-0 left-0 right-0 p-6">
                 {{-- Blur backdrop --}}
                 <div class="absolute inset-0 backdrop-blur-sm bg-[var(--color-bg-primary)]/60 -z-10"></div>
-                
+
                 <h3 class="text-xl font-bold font-display mb-1 text-white">{{ $member->name }}</h3>
                 <p class="text-accent text-sm font-medium mb-4">{{ $member->role }}</p>
 
@@ -55,10 +55,10 @@
                 <div class="flex items-center justify-between">
                     <div class="flex gap-3">
                         @if($member->linkedin_url)
-                            <a 
-                                href="{{ $member->linkedin_url }}" 
-                                target="_blank" 
-                                rel="noopener noreferrer" 
+                            <a
+                                href="{{ $member->linkedin_url }}"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 class="w-9 h-9 rounded-full bg-white/10 hover:bg-accent/30 flex items-center justify-center text-white hover:text-accent transition-all duration-300"
                                 aria-label="LinkedIn profile"
                                 @click.stop
@@ -70,10 +70,10 @@
                         @endif
 
                         @if($member->github_url)
-                            <a 
-                                href="{{ $member->github_url }}" 
-                                target="_blank" 
-                                rel="noopener noreferrer" 
+                            <a
+                                href="{{ $member->github_url }}"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 class="w-9 h-9 rounded-full bg-white/10 hover:bg-accent/30 flex items-center justify-center text-white hover:text-accent transition-all duration-300"
                                 aria-label="GitHub profile"
                                 @click.stop
@@ -84,7 +84,7 @@
                             </a>
                         @endif
                     </div>
-                    
+
                     {{-- Tap to flip hint --}}
                     <span class="text-xs text-text-muted flex items-center gap-1.5">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -103,7 +103,7 @@
         <div class="team-card-back absolute inset-0 backface-hidden rotate-y-180 rounded-3xl overflow-hidden">
             {{-- Background gradient --}}
             <div class="absolute inset-0 bg-gradient-to-br from-accent via-accent/90 to-accent-2"></div>
-            
+
             {{-- Grid pattern overlay --}}
             <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.5) 1px, transparent 0); background-size: 20px 20px;"></div>
 
@@ -141,10 +141,10 @@
                 <div class="flex items-center justify-between pt-4 border-t border-white/20">
                     <div class="flex gap-3">
                         @if($member->linkedin_url)
-                            <a 
-                                href="{{ $member->linkedin_url }}" 
-                                target="_blank" 
-                                rel="noopener noreferrer" 
+                            <a
+                                href="{{ $member->linkedin_url }}"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-all duration-300 hover:scale-110"
                                 aria-label="LinkedIn profile"
                                 @click.stop
@@ -156,10 +156,10 @@
                         @endif
 
                         @if($member->github_url)
-                            <a 
-                                href="{{ $member->github_url }}" 
-                                target="_blank" 
-                                rel="noopener noreferrer" 
+                            <a
+                                href="{{ $member->github_url }}"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-all duration-300 hover:scale-110"
                                 aria-label="GitHub profile"
                                 @click.stop
@@ -170,7 +170,7 @@
                             </a>
                         @endif
                     </div>
-                    
+
                     {{-- Tap to flip back hint --}}
                     <span class="text-xs text-white/60 flex items-center gap-1.5">
                         <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">

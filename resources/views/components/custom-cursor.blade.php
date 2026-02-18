@@ -16,7 +16,7 @@
         x-transition:enter-end="opacity-100"
         x-cloak
     >
-        <div 
+        <div
             class="w-3 h-3 rounded-full bg-white transition-transform duration-150"
             :class="clicking ? 'scale-50' : 'scale-100'"
         ></div>
@@ -33,7 +33,7 @@
         x-transition:enter-end="opacity-100"
         x-cloak
     >
-        <div 
+        <div
             class="relative flex items-center justify-center transition-all duration-300 ease-out"
             :class="{
                 'w-20 h-20': hovering,
@@ -41,7 +41,7 @@
             }"
         >
             {{-- Ring border --}}
-            <div 
+            <div
                 class="absolute inset-0 rounded-full border transition-all duration-300"
                 :class="{
                     'border-accent bg-accent/10 border-2': hovering,
@@ -49,9 +49,9 @@
                     'scale-90': clicking
                 }"
             ></div>
-            
+
             {{-- Magnetic glow effect --}}
-            <div 
+            <div
                 x-show="hovering"
                 class="absolute inset-0 rounded-full bg-accent/20 blur-md"
                 x-transition:enter="transition-opacity duration-300"
@@ -70,14 +70,14 @@
             ></span>
 
             {{-- Arrow icon for links --}}
-            <svg 
+            <svg
                 x-show="hovering && !hoverText && isLink"
                 x-transition:enter="transition-all duration-200"
                 x-transition:enter-start="opacity-0 scale-50"
                 x-transition:enter-end="opacity-100 scale-100"
                 class="relative w-4 h-4 text-white"
-                fill="none" 
-                stroke="currentColor" 
+                fill="none"
+                stroke="currentColor"
                 viewBox="0 0 24 24"
             >
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
@@ -156,7 +156,7 @@ function customCursor() {
             // Hover detection with element-specific behaviors
             document.addEventListener('mouseover', (e) => {
                 const target = e.target;
-                
+
                 // Check for different interactive elements
                 const link = target.closest('a[href]');
                 const button = target.closest('button, [role="button"]');

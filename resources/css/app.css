@@ -12,23 +12,23 @@
     --color-bg-surface: #111827;
     --color-bg-elevated: #1F2937;
     --color-bg-overlay: rgba(0, 0, 0, 0.8);
-    
+
     /* Accent Colors */
     --color-accent: #6C63FF;
     --color-accent-2: #00D4FF;
     --color-accent-hover: #7B73FF;
     --color-accent-2-hover: #33DDFF;
-    
+
     /* Text Colors */
     --color-text: #F9FAFB;
     --color-text-muted: #9CA3AF;
     --color-text-dimmed: #6B7280;
-    
+
     /* Border Colors */
     --color-border: #374151;
     --color-border-light: rgba(255, 255, 255, 0.05);
     --color-border-accent: rgba(108, 99, 255, 0.3);
-    
+
     /* Status Colors */
     --color-success: #10B981;
     --color-success-bg: rgba(16, 185, 129, 0.1);
@@ -55,7 +55,7 @@
     --font-body: 'Inter', sans-serif;
     --font-code: 'JetBrains Mono', monospace;
     --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
-    
+
     /* Border Radius */
     --radius-sm: 6px;
     --radius-md: 8px;
@@ -64,7 +64,7 @@
     --radius-2xl: 24px;
     --radius-3xl: 32px;
     --radius-full: 9999px;
-    
+
     /* Shadows */
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -72,7 +72,7 @@
     --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     --shadow-glow: 0 0 40px rgba(108, 99, 255, 0.3);
     --shadow-glow-accent: 0 0 60px rgba(108, 99, 255, 0.4);
-    
+
     /* Transitions */
     --transition-fast: 150ms;
     --transition-normal: 300ms;
@@ -81,7 +81,7 @@
     --ease-in: cubic-bezier(0.4, 0, 1, 1);
     --ease-out: cubic-bezier(0, 0, 0.2, 1);
     --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
-    
+
     /* Z-Index Scale */
     --z-dropdown: 100;
     --z-sticky: 200;

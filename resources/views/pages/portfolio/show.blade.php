@@ -22,7 +22,7 @@
             ]" />
 
             {{-- Hero Image --}}
-            <div 
+            <div
                 class="mt-12 relative rounded-3xl overflow-hidden border border-white/10"
                 x-data="{ visible: false }"
                 x-intersect.once="visible = true"
@@ -43,7 +43,7 @@
                         </svg>
                     </div>
                 @endif
-                
+
                 {{-- Featured badge --}}
                 @if(isset($project->is_featured) && $project->is_featured)
                     <div class="absolute top-6 left-6">
@@ -55,7 +55,7 @@
                         </span>
                     </div>
                 @endif
-                
+
                 {{-- Category badge --}}
                 @if(isset($project->category))
                     <div class="absolute top-6 right-6">
@@ -73,7 +73,7 @@
         <div class="container">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
                 {{-- Main Content --}}
-                <div 
+                <div
                     class="lg:col-span-2"
                     x-data="{ visible: false }"
                     x-intersect.once="visible = true"
@@ -110,7 +110,7 @@
                 </div>
 
                 {{-- Sidebar --}}
-                <div 
+                <div
                     class="space-y-8"
                     x-data="{ visible: false }"
                     x-intersect.once="setTimeout(() => visible = true, 200)"
@@ -182,7 +182,7 @@
     {{-- Case Study Content --}}
     <section class="py-24 bg-gradient-to-b from-[var(--color-bg-surface)] to-[var(--color-bg-primary)]">
         <div class="container">
-            <div 
+            <div
                 class="max-w-4xl mx-auto"
                 x-data="{ visible: false }"
                 x-intersect.once="visible = true"
@@ -234,7 +234,7 @@
 
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
                 @foreach($metrics as $index => $metric)
-                    <div 
+                    <div
                         class="relative text-center p-8 rounded-3xl bg-[var(--color-bg-elevated)] border border-white/5 group hover:border-accent/20 transition-colors"
                         x-data="{ visible: false }"
                         x-intersect.once="setTimeout(() => visible = true, {{ $index * 100 }})"
@@ -243,7 +243,7 @@
                     >
                         <div class="text-4xl md:text-5xl font-bold gradient-text mb-3">{{ $metric['value'] }}</div>
                         <p class="text-text-muted">{{ $metric['label'] }}</p>
-                        
+
                         {{-- Decorative element --}}
                         <div class="absolute top-4 right-4 w-8 h-8 rounded-lg bg-accent/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     </div>
@@ -271,7 +271,7 @@
     @if(isset($project->testimonial) && $project->testimonial)
         <section class="py-24">
             <div class="container">
-                <div 
+                <div
                     class="max-w-4xl mx-auto relative"
                     x-data="{ visible: false }"
                     x-intersect.once="visible = true"
@@ -284,7 +284,7 @@
                             <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
                         </svg>
                     </div>
-                    
+
                     <div class="relative p-12 rounded-3xl bg-[var(--color-bg-elevated)] border border-white/5">
                         <x-testimonial-card :testimonial="$project->testimonial" />
                     </div>
@@ -315,7 +315,7 @@
     {{-- CTA Section --}}
     <section class="py-24">
         <div class="container">
-            <div 
+            <div
                 class="relative rounded-[2.5rem] overflow-hidden"
                 x-data="{ visible: false }"
                 x-intersect.once="visible = true"
