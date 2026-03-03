@@ -11,7 +11,7 @@
         "@alpinejs/intersect": "^3.14.3",
         "@alpinejs/focus": "^3.14.3",
         "gsap": "^3.12.5",
-        "three": "^0.170.0",
+        "three": "^0.183.2",
         "glightbox": "^3.3.0"
     },
     "devDependencies": {
